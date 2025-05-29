@@ -37,5 +37,7 @@
         "psr-4": {
             "BVP\\Prefecture\\Tests\\": "tests/"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
