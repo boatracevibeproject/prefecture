@@ -2,12 +2,12 @@
 
 [English](./README.md) | [日本語](./README_ja.md)
 
-[![Build Status](https://github.com/shimomo/bvp-prefecture/workflows/Tests/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions?query=workflow%3Atests)
-[![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/branch/5.x/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
-[![PHP Version Require](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
-[![Latest Stable Version](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
-[![Latest Unstable Version](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture#5.x-dev)
-[![License](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
+[![tests](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml)
+[![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
+[![php](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
+[![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
+[![unstable](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture#5.x-dev)
+[![license](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
 The BVP Prefecture package provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
 It is useful for applications that need to handle Japanese geographic data in a consistent and normalized way.
