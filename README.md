@@ -1,6 +1,6 @@
 # BVP Prefecture
 
-[English](./README.md) | [日本語](./README_ja.md)
+[English](README.md) | [日本語](README_ja.md)
 
 [![tests](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
@@ -9,7 +9,7 @@
 [![unstable](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture#5.x-dev)
 [![license](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-The BVP Prefecture package provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
+The BVP Prefecture provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
 It is useful for applications that need to handle Japanese geographic data in a consistent and normalized way.
 
 ## Installation
@@ -216,7 +216,7 @@ $prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
 ```
 
 ## Data Format
-The prefecture codes used in this package are based on JIS X 0401 (Japanese Prefecture Codes), with leading zeros removed and represented as integers.
+The prefecture codes used in this library are based on JIS X 0401 (Japanese Prefecture Codes), with leading zeros removed and represented as integers.
 
 ## Why use this?
 - Consistent and normalized prefecture data for Japanese apps
@@ -224,4 +224,4 @@ The prefecture codes used in this package are based on JIS X 0401 (Japanese Pref
 - Easy to filter by region or name
 
 ## License
-The BVP Prefecture package is open source software licensed under the [MIT license](LICENSE).
+The BVP Prefecture is open source software licensed under the [MIT license](LICENSE).
