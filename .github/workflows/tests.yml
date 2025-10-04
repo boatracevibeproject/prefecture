@@ -37,7 +37,7 @@ jobs:
       run: composer install --prefer-dist --no-interaction --no-progress
 
     - name: Run PHPUnit Tests
-      run: vendor/bin/phpunit --coverage-xml=build/coverage-xml
+      run: vendor/bin/phpunit --configuration=phpunit.xml.dist --coverage-xml=build/coverage-xml
 
     - name: Upload Code Coverage to Codecov
       uses: codecov/codecov-action@v5
