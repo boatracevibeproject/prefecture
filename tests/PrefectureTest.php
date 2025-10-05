@@ -19,7 +19,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'allProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'allProvider')]
     public function testAll(array $arguments, array $expected): void
     {
         $this->assertSame(array_combine(
@@ -33,7 +33,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNumberListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byNumberListProvider')]
     public function testByNumberList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byNumberList(...$arguments));
@@ -44,7 +44,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byNameListProvider')]
     public function testByNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byNameList(...$arguments));
@@ -55,7 +55,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byShortNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byShortNameListProvider')]
     public function testByShortNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byShortNameList(...$arguments));
@@ -66,7 +66,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byHiraganaNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byHiraganaNameListProvider')]
     public function testByHiraganaNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byHiraganaNameList(...$arguments));
@@ -77,7 +77,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byKatakanaNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byKatakanaNameListProvider')]
     public function testByKatakanaNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byKatakanaNameList(...$arguments));
@@ -88,7 +88,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byEnglishNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byEnglishNameListProvider')]
     public function testByEnglishNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byEnglishNameList(...$arguments));
@@ -99,7 +99,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNumberListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNumberListProvider')]
     public function testByRegionNumberList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionNumberList(...$arguments));
@@ -110,7 +110,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNameListProvider')]
     public function testByRegionNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionNameList(...$arguments));
@@ -121,7 +121,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionShortNameListProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionShortNameListProvider')]
     public function testByRegionShortNameList(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionShortNameList(...$arguments));
@@ -132,7 +132,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNumberProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byNumberProvider')]
     public function testByNumber(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byNumber(...$arguments));
@@ -143,7 +143,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byNameProvider')]
     public function testByName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byName(...$arguments));
@@ -154,7 +154,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byShortNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byShortNameProvider')]
     public function testByShortName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byShortName(...$arguments));
@@ -165,7 +165,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byHiraganaNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byHiraganaNameProvider')]
     public function testByHiraganaName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byHiraganaName(...$arguments));
@@ -176,7 +176,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byKatakanaNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byKatakanaNameProvider')]
     public function testByKatakanaName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byKatakanaName(...$arguments));
@@ -187,7 +187,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byEnglishNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byEnglishNameProvider')]
     public function testByEnglishName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byEnglishName(...$arguments));
@@ -198,7 +198,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNumberProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNumberProvider')]
     public function testByRegionNumber(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionNumber(...$arguments));
@@ -209,7 +209,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNameProvider')]
     public function testByRegionName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionName(...$arguments));
@@ -220,7 +220,7 @@ final class PrefectureTest extends TestCase
      * @param  array  $expected
      * @return void
      */
-    #[DataProviderExternal(PrefectureCoreDataProvider::class, 'byRegionShortNameProvider')]
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionShortNameProvider')]
     public function testByRegionShortName(array $arguments, array $expected): void
     {
         $this->assertSame($expected, Prefecture::byRegionShortName(...$arguments));
