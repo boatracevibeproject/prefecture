@@ -7,4 +7,7 @@ namespace BVP\Prefecture;
 /**
  * @author shimomo
  */
-interface PrefectureCoreInterface {}
+interface PrefectureCoreInterface
+{
+    //
+}

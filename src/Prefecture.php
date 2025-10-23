@@ -20,7 +20,10 @@ class Prefecture implements PrefectureInterface
      * @param  \BVP\Prefecture\PrefectureCoreInterface  $prefecture
      * @return void
      */
-    public function __construct(private readonly PrefectureCoreInterface $prefecture) {}
+    public function __construct(private readonly PrefectureCoreInterface $prefecture)
+    {
+        //
+    }
 
     /**
      * @param  string  $name

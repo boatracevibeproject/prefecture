@@ -725,7 +725,7 @@ final class PrefectureConstant
     /**
      * @var array
      */
-    public static array $kumamoto= [
+    public static array $kumamoto = [
         43 => [
             'number' => 43,
             'name' => '熊本県',
