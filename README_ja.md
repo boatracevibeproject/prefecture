@@ -2,7 +2,7 @@
 
 [English](README.md) | [日本語](README_ja.md)
 
-[![tests](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/tests.yml)
+[![test](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
 [![php](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
 [![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
@@ -12,11 +12,13 @@
 BVP Prefecture は、日本の47都道府県に関する構造化データ（漢字・ひらがな・カタカナ・英語での名称、地方情報、都道府県番号など）を提供するライブラリです。日本の地理データを一貫性と正規化を持って扱いたいアプリケーションに最適です。
 
 ## インストール方法
+
 ```bash
 composer require bvp/prefecture
 ```
 
 ## 使用方法
+
 ```php
 <?php
 
@@ -28,9 +30,11 @@ use BVP\Prefecture\Prefecture;
 ### 利用可能なメソッド
 
 #### 都道府県一覧の取得
+
 - [`Prefecture::all()`](#都道府県一覧の取得)
 
 #### 都道府県による絞り込み
+
 - [`Prefecture::byNumber()`](#都道府県番号での絞り込み)
 - [`Prefecture::byName()`](#都道府県名での絞り込み)
 - [`Prefecture::byShortName()`](#都道府県略称での絞り込み)
@@ -39,6 +43,7 @@ use BVP\Prefecture\Prefecture;
 - [`Prefecture::byEnglishName()`](#都道府県英語名での絞り込み)
 
 #### 地方による絞り込み
+
 - [`Prefecture::byRegionNumber()`](#地方番号での検索)
 - [`Prefecture::byRegionName()`](#地方名での検索)
 - [`Prefecture::byRegionShortName()`](#地方略称での検索)
@@ -48,6 +53,7 @@ use BVP\Prefecture\Prefecture;
 ---
 
 #### 都道府県一覧の取得
+
 ```php
 /**
  * @return array
@@ -83,6 +89,7 @@ Array
 ---
 
 #### 都道府県番号での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -109,6 +116,7 @@ Array
 ```
 
 #### 都道府県名での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -118,6 +126,7 @@ $prefecture = Prefecture::byName('東京都');
 ```
 
 #### 都道府県略称での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -127,6 +136,7 @@ $prefecture = Prefecture::byShortName('東京');
 ```
 
 #### 都道府県ひらがな名での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -136,6 +146,7 @@ $prefecture = Prefecture::byHiraganaName('とうきょうと');
 ```
 
 #### 都道府県カタカナ名での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -145,6 +156,7 @@ $prefecture = Prefecture::byKatakanaName('トウキョウト');
 ```
 
 #### 都道府県英語名での絞り込み
+
 ```php
 /**
  * @return array|null
@@ -156,6 +168,7 @@ $prefecture = Prefecture::byEnglishName('tokyo');
 ---
 
 #### 地方番号での検索
+
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNumberList() を使用してください。
@@ -166,6 +179,7 @@ $prefecture = Prefecture::byRegionNumber(3);
 ```
 
 #### 地方名での検索
+
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNameList() を使用してください。
@@ -176,6 +190,7 @@ $prefecture = Prefecture::byRegionName('関東地方');
 ```
 
 #### 地方略称での検索
+
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionShortNameList() を使用してください。
@@ -188,6 +203,7 @@ $prefecture = Prefecture::byRegionShortName('関東');
 ---
 
 #### 複数条件による検索
+
 ```php
 /**
  * @return array|null
@@ -215,14 +231,17 @@ $prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
 ```
 
 ## データ仕様
+
 このライブラリで使用している都道府県コードは、JIS X 0401（都道府県コード）に基づいており、先頭のゼロを除去した数値形式となっています。
 
 例：01（北海道）→ 1、13（東京都）→ 13
 
 ## このライブラリの利点
+
 - 日本向けアプリで一貫性のある都道府県データを扱える
 - 複数の表記形式（漢字・ひらがな・カタカナ・英語）に対応
 - 都道府県名や地方名で柔軟に絞り込み可能
 
 ## ライセンス
+
 このライブラリは [MIT license](LICENSE) のもとで公開されています。
