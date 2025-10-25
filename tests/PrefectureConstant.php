@@ -276,6 +276,7 @@ final class PrefectureConstant
             'region_short_name' => '関東',
         ],
     ];
+
     /**
      * @psalm-var array<15, Prefecture>
      *
