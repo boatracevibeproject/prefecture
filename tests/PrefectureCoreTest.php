@@ -171,6 +171,21 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
+     * @return void
+     */
+    #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionShortNameListProvider')]
+    public function testByRegionShortNameList(array $arguments, array $expected): void
+    {
+        $this->assertSame($expected, $this->prefecture->byRegionShortNameList(...$arguments));
+    }
+
+    /**
      * @psalm-param list<int<1, 47>>|list<list<int<1, 47>>> $arguments
      * @psalm-param Prefecture $expected
      * @psalm-return void
