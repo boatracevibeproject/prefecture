@@ -5,18 +5,23 @@ declare(strict_types=1);
 namespace BVP\Prefecture\Tests;
 
 /**
+ * @psalm-import-type Prefecture from \BVP\Prefecture\PrefectureType
+ *
  * @author shimomo
  */
 final class PrefectureDataProvider
 {
     /**
+     * @psalm-return list<array{
+     *     expected: list<Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function allProvider(): array
     {
         return [
             [
-                'arguments' => [],
                 'expected' => array_merge(
                     PrefectureConstant::$hokkaido,
                     PrefectureConstant::$aomori,
@@ -71,6 +76,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<int<1, 48>>|list<list<int<1, 48>>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byNumberListProvider(): array
@@ -104,6 +114,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byNameListProvider(): array
@@ -160,6 +175,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byShortNameListProvider(): array
@@ -193,6 +213,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byHiraganaNameListProvider(): array
@@ -226,6 +251,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byKatakanaNameListProvider(): array
@@ -259,6 +289,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byEnglishNameListProvider(): array
@@ -292,6 +327,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<int<1, 9>>|list<list<int<1, 9>>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byRegionNumberListProvider(): array
@@ -381,6 +421,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byRegionNameListProvider(): array
@@ -470,6 +515,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: array<int<1, 47>, Prefecture>,
+     * }>
+     *
      * @return array
      */
     public static function byRegionShortNameListProvider(): array
@@ -559,6 +609,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<int<1, 47>>|list<list<int<1, 47>>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byNumberProvider(): array
@@ -576,6 +631,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byNameProvider(): array
@@ -601,6 +661,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byShortNameProvider(): array
@@ -618,6 +683,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byHiraganaNameProvider(): array
@@ -635,6 +705,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byKatakanaNameProvider(): array
@@ -652,6 +727,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byEnglishNameProvider(): array
@@ -669,6 +749,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<int<1, 8>>|list<list<int<1, 8>>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byRegionNumberProvider(): array
@@ -686,6 +771,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byRegionNameProvider(): array
@@ -703,6 +793,11 @@ final class PrefectureDataProvider
     }
 
     /**
+     * @psalm-return list<array{
+     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     *     expected: Prefecture|false,
+     * }>
+     *
      * @return array
      */
     public static function byRegionShortNameProvider(): array

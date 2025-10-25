@@ -5,11 +5,15 @@ declare(strict_types=1);
 namespace BVP\Prefecture\Tests;
 
 /**
+ * @psalm-import-type Prefecture from \BVP\Prefecture\PrefectureType
+ *
  * @author shimomo
  */
 final class PrefectureConstant
 {
     /**
+     * @psalm-var array<1, Prefecture>
+     *
      * @var array
      */
     public static array $hokkaido = [
@@ -27,6 +31,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<2, Prefecture>
+     *
      * @var array
      */
     public static array $aomori = [
@@ -44,6 +50,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<3, Prefecture>
+     *
      * @var array
      */
     public static array $iwate = [
@@ -61,6 +69,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<4, Prefecture>
+     *
      * @var array
      */
     public static array $miyagi = [
@@ -78,6 +88,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<5, Prefecture>
+     *
      * @var array
      */
     public static array $akita = [
@@ -95,6 +107,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<6, Prefecture>
+     *
      * @var array
      */
     public static array $yamagata = [
@@ -112,6 +126,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<7, Prefecture>
+     *
      * @var array
      */
     public static array $fukushima = [
@@ -129,6 +145,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<8, Prefecture>
+     *
      * @var array
      */
     public static array $ibaraki = [
@@ -146,6 +164,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<9, Prefecture>
+     *
      * @var array
      */
     public static array $tochigi = [
@@ -163,6 +183,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<10, Prefecture>
+     *
      * @var array
      */
     public static array $gunma = [
@@ -180,6 +202,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<11, Prefecture>
+     *
      * @var array
      */
     public static array $saitama = [
@@ -197,6 +221,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<12, Prefecture>
+     *
      * @var array
      */
     public static array $chiba = [
@@ -214,6 +240,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<13, Prefecture>
+     *
      * @var array
      */
     public static array $tokyo = [
@@ -231,6 +259,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<14, Prefecture>
+     *
      * @var array
      */
     public static array $kanagawa = [
@@ -247,6 +277,8 @@ final class PrefectureConstant
         ],
     ];
     /**
+     * @psalm-var array<15, Prefecture>
+     *
      * @var array
      */
     public static array $niigata = [
@@ -264,6 +296,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<16, Prefecture>
+     *
      * @var array
      */
     public static array $toyama = [
@@ -281,6 +315,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<17, Prefecture>
+     *
      * @var array
      */
     public static array $ishikawa = [
@@ -298,6 +334,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<18, Prefecture>
+     *
      * @var array
      */
     public static array $fukui = [
@@ -315,6 +353,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<19, Prefecture>
+     *
      * @var array
      */
     public static array $yamanashi = [
@@ -332,6 +372,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<20, Prefecture>
+     *
      * @var array
      */
     public static array $nagano = [
@@ -349,6 +391,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<21, Prefecture>
+     *
      * @var array
      */
     public static array $gifu = [
@@ -366,6 +410,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<22, Prefecture>
+     *
      * @var array
      */
     public static array $shizuoka = [
@@ -383,6 +429,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<23, Prefecture>
+     *
      * @var array
      */
     public static array $aichi = [
@@ -400,6 +448,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<24, Prefecture>
+     *
      * @var array
      */
     public static array $mie = [
@@ -417,6 +467,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<25, Prefecture>
+     *
      * @var array
      */
     public static array $shiga = [
@@ -434,6 +486,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<26, Prefecture>
+     *
      * @var array
      */
     public static array $kyoto = [
@@ -451,6 +505,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<27, Prefecture>
+     *
      * @var array
      */
     public static array $osaka = [
@@ -468,6 +524,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<28, Prefecture>
+     *
      * @var array
      */
     public static array $hyogo = [
@@ -485,6 +543,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<29, Prefecture>
+     *
      * @var array
      */
     public static array $nara = [
@@ -502,6 +562,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<30, Prefecture>
+     *
      * @var array
      */
     public static array $wakayama = [
@@ -519,6 +581,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<31, Prefecture>
+     *
      * @var array
      */
     public static array $tottori = [
@@ -536,6 +600,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<32, Prefecture>
+     *
      * @var array
      */
     public static array $shimane = [
@@ -553,6 +619,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<33, Prefecture>
+     *
      * @var array
      */
     public static array $okayama = [
@@ -570,6 +638,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<34, Prefecture>
+     *
      * @var array
      */
     public static array $hiroshima = [
@@ -587,6 +657,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<35, Prefecture>
+     *
      * @var array
      */
     public static array $yamaguchi = [
@@ -604,6 +676,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<36, Prefecture>
+     *
      * @var array
      */
     public static array $tokushima = [
@@ -621,6 +695,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<37, Prefecture>
+     *
      * @var array
      */
     public static array $kagawa = [
@@ -638,6 +714,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<38, Prefecture>
+     *
      * @var array
      */
     public static array $ehime = [
@@ -655,6 +733,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<39, Prefecture>
+     *
      * @var array
      */
     public static array $kochi = [
@@ -672,6 +752,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<40, Prefecture>
+     *
      * @var array
      */
     public static array $fukuoka = [
@@ -689,6 +771,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<41, Prefecture>
+     *
      * @var array
      */
     public static array $saga = [
@@ -706,6 +790,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<42, Prefecture>
+     *
      * @var array
      */
     public static array $nagasaki = [
@@ -723,6 +809,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<43, Prefecture>
+     *
      * @var array
      */
     public static array $kumamoto = [
@@ -740,6 +828,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<44, Prefecture>
+     *
      * @var array
      */
     public static array $oita = [
@@ -757,6 +847,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<45, Prefecture>
+     *
      * @var array
      */
     public static array $miyazaki = [
@@ -774,6 +866,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<46, Prefecture>
+     *
      * @var array
      */
     public static array $kagoshima = [
@@ -791,6 +885,8 @@ final class PrefectureConstant
     ];
 
     /**
+     * @psalm-var array<47, Prefecture>
+     *
      * @var array
      */
     public static array $okinawa = [

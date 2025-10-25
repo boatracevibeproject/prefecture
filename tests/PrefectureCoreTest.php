@@ -9,40 +9,54 @@ use PHPUnit\Framework\Attributes\DataProviderExternal;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * @psalm-import-type Prefecture from \BVP\Prefecture\PrefectureType
+ *
  * @author shimomo
  */
 final class PrefectureCoreTest extends TestCase
 {
     /**
+     * @psalm-suppress PropertyNotSetInConstructor
+     * @psalm-var \BVP\Prefecture\PrefectureCore
+     *
      * @var \BVP\Prefecture\PrefectureCore
      */
     protected PrefectureCore $prefecture;
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
+    #[\Override]
     protected function setUp(): void
     {
         $this->prefecture = new PrefectureCore();
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'allProvider')]
-    public function testAll(array $arguments, array $expected): void
+    public function testAll(array $expected): void
     {
         $this->assertSame(array_combine(
             array_map(fn($key) => $key + 1, array_keys($expected)),
             array_values($expected)
-        ), $this->prefecture->all(...$arguments));
+        ), $this->prefecture->all());
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<int<1, 47>>|list<list<int<1, 47>>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byNumberListProvider')]
@@ -52,8 +66,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byNameListProvider')]
@@ -63,8 +81,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byShortNameListProvider')]
@@ -74,8 +96,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byHiraganaNameListProvider')]
@@ -85,8 +111,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byKatakanaNameListProvider')]
@@ -96,8 +126,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byEnglishNameListProvider')]
@@ -107,8 +141,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<int<1, 8>>|list<list<int<1, 8>>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNumberListProvider')]
@@ -118,8 +156,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNameListProvider')]
@@ -129,8 +171,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<int<1, 47>>|list<list<int<1, 47>>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byNumberProvider')]
@@ -140,8 +186,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byNameProvider')]
@@ -151,8 +201,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byShortNameProvider')]
@@ -162,8 +216,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byHiraganaNameProvider')]
@@ -173,8 +231,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byKatakanaNameProvider')]
@@ -184,8 +246,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byEnglishNameProvider')]
@@ -195,8 +261,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<int<1, 8>>|list<list<int<1, 8>>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNumberProvider')]
@@ -206,8 +276,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionNameProvider')]
@@ -217,8 +291,12 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
-     * @param  array  $arguments
-     * @param  array  $expected
+     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
+     * @psalm-param Prefecture $expected
+     * @psalm-return void
+     *
+     * @param array $arguments
+     * @param array $expected
      * @return void
      */
     #[DataProviderExternal(PrefectureDataProvider::class, 'byRegionShortNameProvider')]
@@ -228,6 +306,8 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testThrowsExceptionWhenMethodDoesNotExist(): void
@@ -238,10 +318,13 @@ final class PrefectureCoreTest extends TestCase
             "Call to undefined method 'BVP\Prefecture\PrefectureCore::ghost()'."
         );
 
+        /** @psalm-suppress UndefinedMagicMethod */
         $this->prefecture->ghost();
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testThrowsExceptionWhenArgumentsAreTooFew(): void
@@ -257,6 +340,8 @@ final class PrefectureCoreTest extends TestCase
     }
 
     /**
+     * @psalm-return void
+     *
      * @return void
      */
     public function testThrowsExceptionWhenArgumentsAreTooMany(): void

@@ -7,16 +7,41 @@ namespace BVP\Prefecture;
 use Shimomo\Helper\Arr;
 
 /**
+ * @psalm-import-type Prefecture from PrefectureType
+ * @psalm-method array<int<1, 47>, Prefecture> all()
+ * @psalm-method array<int<1, 47>, Prefecture> byNumberList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byShortNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byHiraganaNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byKatakanaNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byEnglishNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byRegionNumberList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byRegionNameList(mixed ...$arguments)
+ * @psalm-method array<int<1, 47>, Prefecture> byRegionShortNameList(mixed ...$arguments)
+ * @psalm-method Prefecture byNumber(mixed ...$arguments)
+ * @psalm-method Prefecture byName(mixed ...$arguments)
+ * @psalm-method Prefecture byShortName(mixed ...$arguments)
+ * @psalm-method Prefecture byHiraganaName(mixed ...$arguments)
+ * @psalm-method Prefecture byKatakanaName(mixed ...$arguments)
+ * @psalm-method Prefecture byEnglishName(mixed ...$arguments)
+ * @psalm-method Prefecture byRegionNumber(mixed ...$arguments)
+ * @psalm-method Prefecture byRegionName(mixed ...$arguments)
+ * @psalm-method Prefecture byRegionShortName(mixed ...$arguments)
+ *
  * @author shimomo
  */
-class PrefectureCore implements PrefectureCoreInterface
+final class PrefectureCore implements PrefectureCoreInterface
 {
     /**
+     * @psalm-var list<Prefecture>
+     *
      * @var array
      */
     private array $prefectures;
 
     /**
+     * @psalm-var array<non-empty-string, 'all'|'byList'|'by'>
+     *
      * @var array
      */
     private array $resolveMethodMap = [
@@ -25,17 +50,19 @@ class PrefectureCore implements PrefectureCoreInterface
         '/^by(.+)$/u' => 'by',
     ];
 
-    /**
-     * @return void
-     */
     public function __construct()
     {
+        /** @psalm-var list<Prefecture> */
         $this->prefectures = require __DIR__ . '/../config/prefectures.php';
     }
 
     /**
-     * @param  string  $name
-     * @param  array   $arguments
+     * @psalm-param non-empty-string $name
+     * @psalm-param list<mixed> $arguments
+     * @psalm-return array<int<1, 47>, Prefecture>|Prefecture|null
+     *
+     * @param string $name
+     * @param array $arguments
      * @return array|null
      */
     public function __call(string $name, array $arguments): ?array
@@ -44,10 +71,13 @@ class PrefectureCore implements PrefectureCoreInterface
     }
 
     /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return array|null
+     * @psalm-param non-empty-string $name
+     * @psalm-param list<mixed> $arguments
+     * @psalm-return array<int<1, 47>, Prefecture>|Prefecture|null
      *
+     * @param string $name
+     * @param array $arguments
+     * @return array|null
      * @throws \BadMethodCallException
      */
     private function resolveMethod(string $name, array $arguments): ?array
@@ -55,6 +85,12 @@ class PrefectureCore implements PrefectureCoreInterface
         foreach ($this->resolveMethodMap as $pattern => $method) {
             if (preg_match($pattern, $name, $matches)) {
                 if (is_callable([$this, $method])) {
+                    if ($method === 'all') {
+                        /** @psalm-var array<int<1, 47>, Prefecture> */
+                        return $this->$method();
+                    }
+
+                    /** @psalm-var array<int<1, 47>, Prefecture>|Prefecture|null */
                     return $this->$method($matches[1], $arguments);
                 }
             }
@@ -66,20 +102,23 @@ class PrefectureCore implements PrefectureCoreInterface
     }
 
     /**
-     * @param  string  $name
-     * @param  array   $arguments
+     * @psalm-return array<int<1, 47>, Prefecture>
+     *
      * @return array
      */
-    private function all(string $name, array $arguments): array
+    private function all(): array
     {
         return $this->convertToKeyedArray($this->prefectures, 'number');
     }
 
     /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return array|null
+     * @psalm-param non-empty-string $name
+     * @psalm-param list<mixed> $arguments
+     * @psalm-return array<int<1, 47>, Prefecture>|null
      *
+     * @param string $name
+     * @param array $arguments
+     * @return array|null
      * @throws \InvalidArgumentException
      */
     private function byList(string $name, array $arguments): ?array
@@ -93,11 +132,13 @@ class PrefectureCore implements PrefectureCoreInterface
 
         $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = Arr::flatten($arguments);
+        /** @psalm-var array<int<1, 47>, Prefecture> */
         $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
         if (!empty($exactMatchedPrefectures)) {
             return $this->convertToKeyedArray($exactMatchedPrefectures, 'number');
         }
 
+        /** @psalm-var array<int<1, 47>, Prefecture> */
         $partialMatchedPrefectures = array_filter(
             $this->prefectures,
             function ($prefecture, $key) use ($snakeCaseName, $flattenArguments) {
@@ -118,10 +159,13 @@ class PrefectureCore implements PrefectureCoreInterface
     }
 
     /**
-     * @param  string  $name
-     * @param  array   $arguments
-     * @return array|null
+     * @psalm-param non-empty-string $name
+     * @psalm-param list<mixed> $arguments
+     * @psalm-return Prefecture|null
      *
+     * @param string $name
+     * @param array $arguments
+     * @return array|null
      * @throws \InvalidArgumentException
      */
     private function by(string $name, array $arguments): ?array
@@ -136,8 +180,9 @@ class PrefectureCore implements PrefectureCoreInterface
 
         $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = Arr::flatten($arguments);
-        $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, $flattenArguments[0]);
+        $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, (string) $flattenArguments[0]);
         if (!is_null($exactMatchedPrefecture)) {
+            /** @psalm-var Prefecture */
             return $exactMatchedPrefecture;
         }
 
@@ -154,21 +199,32 @@ class PrefectureCore implements PrefectureCoreInterface
     }
 
     /**
-     * @param  array   $array
-     * @param  string  $key
+     * @psalm-param list<Prefecture>|array<int<1, 47>, Prefecture> $array
+     * @psalm-param non-empty-string $key
+     * @psalm-return array<int<1, 47>, Prefecture>
+     *
+     * @param array $array
+     * @param string $key
      * @return array
      */
     private function convertToKeyedArray(array $array, string $key): array
     {
-        return array_combine(array_column($array, $key), $array);
+        /** @psalm-var array<array-key, int<1, 47>|non-empty-string> */
+        $keys = array_column($array, $key);
+
+        /** @psalm-var array<int<1, 47>, Prefecture> */
+        return array_combine($keys, $array);
     }
 
     /**
-     * @param  string  $value
+     * @psalm-param string $value
+     * @psalm-return string
+     *
+     * @param string $value
      * @return string
      */
     private function convertToSnakeCase(string $value): string
     {
-        return ltrim(strtolower(preg_replace('/[A-Z]/', '_$0', $value)), '_');
+        return ltrim(strtolower((string) preg_replace('/[A-Z]/', '_$0', $value)), '_');
     }
 }
