@@ -132,6 +132,15 @@ final class PrefectureCore implements PrefectureCoreInterface
 
         $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = Arr::flatten($arguments);
+        foreach ($flattenArguments as $flattenArgument) {
+            if (!is_string($flattenArgument) && !is_int($flattenArgument)) {
+                throw new \InvalidArgumentException(
+                    __METHOD__ . "() - Argument passed to function " . self::class .
+                    "::by{$name}() must be of type string or int, " . gettype($flattenArgument) . " given."
+                );
+            }
+        }
+
         /** @psalm-var array<int<1, 47>, Prefecture> */
         $exactMatchedPrefectures = Arr::whereIn($this->prefectures, $snakeCaseName, $flattenArguments);
         if (!empty($exactMatchedPrefectures)) {
@@ -141,15 +150,14 @@ final class PrefectureCore implements PrefectureCoreInterface
         /** @psalm-var array<int<1, 47>, Prefecture> */
         $partialMatchedPrefectures = array_filter(
             $this->prefectures,
-            function ($prefecture, $key) use ($snakeCaseName, $flattenArguments) {
+            function (array $prefecture) use ($snakeCaseName, $flattenArguments) {
                 return !empty(array_filter(
                     $flattenArguments,
-                    function ($argument) use ($snakeCaseName, $prefecture, $key) {
+                    function (int|string $argument) use ($snakeCaseName, $prefecture) {
                         return str_contains((string) $prefecture[$snakeCaseName], (string) $argument);
                     }
                 ));
-            },
-            ARRAY_FILTER_USE_BOTH
+            }
         );
         if (!empty($partialMatchedPrefectures)) {
             return $this->convertToKeyedArray($partialMatchedPrefectures, 'number');
@@ -180,6 +188,13 @@ final class PrefectureCore implements PrefectureCoreInterface
 
         $snakeCaseName = $this->convertToSnakeCase($name);
         $flattenArguments = Arr::flatten($arguments);
+        if (!is_string($flattenArguments[0]) && !is_int($flattenArguments[0])) {
+            throw new \InvalidArgumentException(
+                __METHOD__ . "() - Argument passed to function " . self::class .
+                "::by{$name}() must be of type string or int, " . gettype($flattenArguments[0]) . " given."
+            );
+        }
+
         $exactMatchedPrefecture = Arr::firstWhere($this->prefectures, $snakeCaseName, (string) $flattenArguments[0]);
         if (!is_null($exactMatchedPrefecture)) {
             /** @psalm-var Prefecture */
@@ -188,10 +203,12 @@ final class PrefectureCore implements PrefectureCoreInterface
 
         $partialMatchedPrefectures = array_filter(
             $this->prefectures,
-            function ($prefecture, $key) use ($snakeCaseName, $flattenArguments) {
-                return str_contains((string) $prefecture[$snakeCaseName], (string) $flattenArguments[0]);
-            },
-            ARRAY_FILTER_USE_BOTH
+            function (array $prefecture) use ($snakeCaseName, $flattenArguments) {
+                return $snakeCaseName !== '' && str_contains(
+                    (string) $prefecture[$snakeCaseName],
+                    (string) $flattenArguments[0]
+                );
+            }
         );
 
         $partialMatchedPrefecture = reset($partialMatchedPrefectures);
