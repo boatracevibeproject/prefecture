@@ -2,10 +2,10 @@
 
 [English](README.md) | [日本語](README_ja.md)
 
-[![test](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml)
 [![keepalive](https://github.com/shimomo/bvp-prefecture/actions/workflows/keepalive.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/keepalive.yml)
 [![psalm](https://github.com/shimomo/bvp-prefecture/actions/workflows/psalm.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/psalm.yml)
 [![security](https://github.com/shimomo/bvp-prefecture/actions/workflows/security.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/security.yml)
+[![test](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
 [![php](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
 [![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
