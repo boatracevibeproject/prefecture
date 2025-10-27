@@ -2,11 +2,13 @@
 
 [English](README.md) | [日本語](README_ja.md)
 
+[![keepalive](https://github.com/shimomo/bvp-prefecture/actions/workflows/keepalive.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/keepalive.yml)
+[![psalm](https://github.com/shimomo/bvp-prefecture/actions/workflows/psalm.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/psalm.yml)
+[![security](https://github.com/shimomo/bvp-prefecture/actions/workflows/security.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/security.yml)
 [![test](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml/badge.svg)](https://github.com/shimomo/bvp-prefecture/actions/workflows/test.yml)
 [![codecov](https://codecov.io/gh/shimomo/bvp-prefecture/graph/badge.svg?token=6DECMJOHLZ)](https://codecov.io/gh/shimomo/bvp-prefecture)
 [![php](https://poser.pugx.org/bvp/prefecture/require/php)](https://packagist.org/packages/bvp/prefecture)
 [![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
-[![unstable](https://poser.pugx.org/bvp/prefecture/v/unstable)](https://packagist.org/packages/bvp/prefecture#5.x-dev)
 [![license](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
 BVP Prefecture は、日本の47都道府県に関する構造化データ（漢字・ひらがな・カタカナ・英語での名称、地方情報、都道府県番号など）を提供するライブラリです。日本の地理データを一貫性と正規化を持って扱いたいアプリケーションに最適です。
