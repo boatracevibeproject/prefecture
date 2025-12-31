@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture;
 
-use Illuminate\Support\Collection;
-
 /**
  * @psalm-import-type Prefecture from PrefectureType
  * @psalm-method static array<int<1, 47>, Prefecture> all()
