@@ -1,4 +1,4 @@
-# BVP Prefecture
+# Prefecture for Boatrace Venture Project
 
 [English](README.md) | [日本語](README_ja.md)
 
@@ -11,7 +11,7 @@
 [![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
 [![license](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-BVP Prefecture は、日本の47都道府県に関する構造化データ（漢字・ひらがな・カタカナ・英語での名称、地方情報、都道府県番号など）を提供するライブラリです。日本の地理データを一貫性と正規化を持って扱いたいアプリケーションに最適です。
+Prefecture は、日本の47都道府県に関する構造化データ（漢字・ひらがな・カタカナ・英語での名称、地方情報、都道府県番号など）を提供するライブラリです。日本の地理データを一貫性と正規化を持って扱いたいアプリケーションに最適です。
 
 ## インストール方法
 
@@ -64,7 +64,7 @@ $prefectures = Prefecture::all();
 
 print_r($prefectures);
 
-/*------------------------------
+// Output:
 Array
 (
     [1] => Array
@@ -85,7 +85,6 @@ Array
     [46] => Array(...) // Kagoshima
     [47] => Array(...) // Okinawa
 )
-------------------------------*/
 ```
 
 ---
@@ -94,14 +93,14 @@ Array
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byNumber(13);
 // または $prefecture = Prefecture::byNumber([13]);
 
 print_r($prefecture);
 
-/*------------------------------
+// Output:
 Array
 (
     [number] => 13
@@ -114,14 +113,13 @@ Array
     [region_name] => 関東地方
     [region_short_name] => 関東
 )
-------------------------------*/
 ```
 
 #### 都道府県名での絞り込み
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byName('東京都');
 // または $prefecture = Prefecture::byName(['東京都']);
@@ -131,7 +129,7 @@ $prefecture = Prefecture::byName('東京都');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byShortName('東京');
 // または $prefecture = Prefecture::byShortName(['東京']);
@@ -141,7 +139,7 @@ $prefecture = Prefecture::byShortName('東京');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byHiraganaName('とうきょうと');
 // または $prefecture = Prefecture::byHiraganaName(['とうきょうと']);
@@ -151,7 +149,7 @@ $prefecture = Prefecture::byHiraganaName('とうきょうと');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byKatakanaName('トウキョウト');
 // または $prefecture = Prefecture::byKatakanaName(['トウキョウト']);
@@ -161,7 +159,7 @@ $prefecture = Prefecture::byKatakanaName('トウキョウト');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byEnglishName('tokyo');
 // または $prefecture = Prefecture::byEnglishName(['tokyo']);
@@ -174,7 +172,7 @@ $prefecture = Prefecture::byEnglishName('tokyo');
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNumberList() を使用してください。
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionNumber(3);
 // または $prefecture = Prefecture::byRegionNumber([3]);
@@ -185,7 +183,7 @@ $prefecture = Prefecture::byRegionNumber(3);
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionNameList() を使用してください。
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionName('関東地方');
 // または $prefecture = Prefecture::byRegionName(['関東地方']);
@@ -196,7 +194,7 @@ $prefecture = Prefecture::byRegionName('関東地方');
 ```php
 /**
  * @deprecated 複数の都道府県が一致しても単数の結果しか返しません。代わりに Prefecture::byRegionShortNameList() を使用してください。
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionShortName('関東');
 // または $prefecture = Prefecture::byRegionShortName(['関東']);
@@ -208,25 +206,25 @@ $prefecture = Prefecture::byRegionShortName('関東');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byNumberList(13, 34);
 // または Prefecture::byNumberList([13, 34]);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byNameList('東京都', '広島県');
 // または Prefecture::byNameList(['東京都', '広島県']);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byRegionNumberList(3, 6);
 // または Prefecture::byRegionNumberList([3, 6]);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
 // または Prefecture::byRegionNameList(['関東地方', '中国地方']);
@@ -246,4 +244,4 @@ $prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
 
 ## ライセンス
 
-このライブラリは [MIT license](LICENSE) のもとで公開されています。
+Prefecture は [MIT license](LICENSE) の元で公開されています。
