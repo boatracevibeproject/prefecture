@@ -1,4 +1,4 @@
-# BVP Prefecture
+# Prefecture for Boatrace Venture Project
 
 [English](README.md) | [日本語](README_ja.md)
 
@@ -11,7 +11,7 @@
 [![stable](https://poser.pugx.org/bvp/prefecture/v/stable)](https://packagist.org/packages/bvp/prefecture)
 [![license](https://poser.pugx.org/bvp/prefecture/license)](https://packagist.org/packages/bvp/prefecture)
 
-The BVP Prefecture provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
+Prefecture provides structured data about all Japanese prefectures, including their names in various scripts (Kanji, Hiragana, Katakana, English), region information, and identifier numbers.
 It is useful for applications that need to handle Japanese geographic data in a consistent and normalized way.
 
 ## Installation
@@ -65,7 +65,7 @@ $prefectures = Prefecture::all();
 
 print_r($prefectures);
 
-/*------------------------------
+// Output:
 Array
 (
     [1] => Array
@@ -86,7 +86,6 @@ Array
     [46] => Array(...) // Kagoshima
     [47] => Array(...) // Okinawa
 )
-------------------------------*/
 ```
 
 ---
@@ -95,14 +94,14 @@ Array
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byNumber(13);
 // or $prefecture = Prefecture::byNumber([13]);
 
 print_r($prefecture);
 
-/*------------------------------
+// Output:
 Array
 (
     [number] => 13
@@ -115,14 +114,13 @@ Array
     [region_name] => 関東地方
     [region_short_name] => 関東
 )
-------------------------------*/
 ```
 
 #### Filter by Prefecture Name
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byName('東京都');
 // or $prefecture = Prefecture::byName(['東京都']);
@@ -132,7 +130,7 @@ $prefecture = Prefecture::byName('東京都');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byShortName('東京');
 // or $prefecture = Prefecture::byShortName(['東京']);
@@ -142,7 +140,7 @@ $prefecture = Prefecture::byShortName('東京');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byHiraganaName('とうきょうと');
 // or $prefecture = Prefecture::byHiraganaName(['とうきょうと']);
@@ -152,7 +150,7 @@ $prefecture = Prefecture::byHiraganaName('とうきょうと');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byKatakanaName('トウキョウト');
 // or $prefecture = Prefecture::byKatakanaName(['トウキョウト']);
@@ -162,7 +160,7 @@ $prefecture = Prefecture::byKatakanaName('トウキョウト');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byEnglishName('tokyo');
 // or $prefecture = Prefecture::byEnglishName(['tokyo']);
@@ -175,7 +173,7 @@ $prefecture = Prefecture::byEnglishName('tokyo');
 ```php
 /**
  * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionNumberList() instead.
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionNumber(3);
 // or $prefecture = Prefecture::byRegionNumber([3]);
@@ -186,7 +184,7 @@ $prefecture = Prefecture::byRegionNumber(3);
 ```php
 /**
  * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionNameList() instead.
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionName('関東地方');
 // or $prefecture = Prefecture::byRegionName(['関東地方']);
@@ -197,7 +195,7 @@ $prefecture = Prefecture::byRegionName('関東地方');
 ```php
 /**
  * @deprecated It returns only a single result even if multiple prefectures match. Use Prefecture::byRegionShortNameList() instead.
- * @return array|null
+ * @return ?array
  */
 $prefecture = Prefecture::byRegionShortName('関東');
 // or $prefecture = Prefecture::byRegionShortName(['関東']);
@@ -209,25 +207,25 @@ $prefecture = Prefecture::byRegionShortName('関東');
 
 ```php
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byNumberList(13, 34);
 // or Prefecture::byNumberList([13, 34]);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byNameList('東京都', '広島県');
 // or Prefecture::byNameList(['東京都', '広島県']);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byRegionNumberList(3, 6);
 // or Prefecture::byRegionNumberList([3, 6]);
 
 /**
- * @return array|null
+ * @return ?array
  */
 $prefectures = Prefecture::byRegionNameList('関東地方', '中国地方');
 // or Prefecture::byRegionNameList(['関東地方', '中国地方']);
@@ -245,4 +243,4 @@ The prefecture codes used in this library are based on JIS X 0401 (Japanese Pref
 
 ## License
 
-The BVP Prefecture is open source software licensed under the [MIT license](LICENSE).
+Prefecture is open source software licensed under the [MIT license](LICENSE).
