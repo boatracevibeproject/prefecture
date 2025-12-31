@@ -12,7 +12,7 @@ namespace BVP\Prefecture\Tests;
 final class PrefectureConstant
 {
     /**
-     * @psalm-var array<1, Prefecture>
+     * @psalm-var non-empty-array<1, Prefecture>
      *
      * @var array
      */
@@ -31,7 +31,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<2, Prefecture>
+     * @psalm-var non-empty-array<2, Prefecture>
      *
      * @var array
      */
@@ -50,7 +50,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<3, Prefecture>
+     * @psalm-var non-empty-array<3, Prefecture>
      *
      * @var array
      */
@@ -69,7 +69,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<4, Prefecture>
+     * @psalm-var non-empty-array<4, Prefecture>
      *
      * @var array
      */
@@ -88,7 +88,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<5, Prefecture>
+     * @psalm-var non-empty-array<5, Prefecture>
      *
      * @var array
      */
@@ -107,7 +107,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<6, Prefecture>
+     * @psalm-var non-empty-array<6, Prefecture>
      *
      * @var array
      */
@@ -126,7 +126,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<7, Prefecture>
+     * @psalm-var non-empty-array<7, Prefecture>
      *
      * @var array
      */
@@ -145,7 +145,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<8, Prefecture>
+     * @psalm-var non-empty-array<8, Prefecture>
      *
      * @var array
      */
@@ -164,7 +164,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<9, Prefecture>
+     * @psalm-var non-empty-array<9, Prefecture>
      *
      * @var array
      */
@@ -183,7 +183,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<10, Prefecture>
+     * @psalm-var non-empty-array<10, Prefecture>
      *
      * @var array
      */
@@ -202,7 +202,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<11, Prefecture>
+     * @psalm-var non-empty-array<11, Prefecture>
      *
      * @var array
      */
@@ -221,7 +221,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<12, Prefecture>
+     * @psalm-var non-empty-array<12, Prefecture>
      *
      * @var array
      */
@@ -240,7 +240,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<13, Prefecture>
+     * @psalm-var non-empty-array<13, Prefecture>
      *
      * @var array
      */
@@ -259,7 +259,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<14, Prefecture>
+     * @psalm-var non-empty-array<14, Prefecture>
      *
      * @var array
      */
@@ -278,7 +278,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<15, Prefecture>
+     * @psalm-var non-empty-array<15, Prefecture>
      *
      * @var array
      */
@@ -297,7 +297,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<16, Prefecture>
+     * @psalm-var non-empty-array<16, Prefecture>
      *
      * @var array
      */
@@ -316,7 +316,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<17, Prefecture>
+     * @psalm-var non-empty-array<17, Prefecture>
      *
      * @var array
      */
@@ -335,7 +335,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<18, Prefecture>
+     * @psalm-var non-empty-array<18, Prefecture>
      *
      * @var array
      */
@@ -354,7 +354,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<19, Prefecture>
+     * @psalm-var non-empty-array<19, Prefecture>
      *
      * @var array
      */
@@ -373,7 +373,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<20, Prefecture>
+     * @psalm-var non-empty-array<20, Prefecture>
      *
      * @var array
      */
@@ -392,7 +392,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<21, Prefecture>
+     * @psalm-var non-empty-array<21, Prefecture>
      *
      * @var array
      */
@@ -411,7 +411,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<22, Prefecture>
+     * @psalm-var non-empty-array<22, Prefecture>
      *
      * @var array
      */
@@ -430,7 +430,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<23, Prefecture>
+     * @psalm-var non-empty-array<23, Prefecture>
      *
      * @var array
      */
@@ -449,7 +449,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<24, Prefecture>
+     * @psalm-var non-empty-array<24, Prefecture>
      *
      * @var array
      */
@@ -468,7 +468,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<25, Prefecture>
+     * @psalm-var non-empty-array<25, Prefecture>
      *
      * @var array
      */
@@ -487,7 +487,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<26, Prefecture>
+     * @psalm-var non-empty-array<26, Prefecture>
      *
      * @var array
      */
@@ -506,7 +506,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<27, Prefecture>
+     * @psalm-var non-empty-array<27, Prefecture>
      *
      * @var array
      */
@@ -525,7 +525,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<28, Prefecture>
+     * @psalm-var non-empty-array<28, Prefecture>
      *
      * @var array
      */
@@ -544,7 +544,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<29, Prefecture>
+     * @psalm-var non-empty-array<29, Prefecture>
      *
      * @var array
      */
@@ -563,7 +563,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<30, Prefecture>
+     * @psalm-var non-empty-array<30, Prefecture>
      *
      * @var array
      */
@@ -582,7 +582,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<31, Prefecture>
+     * @psalm-var non-empty-array<31, Prefecture>
      *
      * @var array
      */
@@ -601,7 +601,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<32, Prefecture>
+     * @psalm-var non-empty-array<32, Prefecture>
      *
      * @var array
      */
@@ -620,7 +620,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<33, Prefecture>
+     * @psalm-var non-empty-array<33, Prefecture>
      *
      * @var array
      */
@@ -639,7 +639,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<34, Prefecture>
+     * @psalm-var non-empty-array<34, Prefecture>
      *
      * @var array
      */
@@ -658,7 +658,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<35, Prefecture>
+     * @psalm-var non-empty-array<35, Prefecture>
      *
      * @var array
      */
@@ -677,7 +677,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<36, Prefecture>
+     * @psalm-var non-empty-array<36, Prefecture>
      *
      * @var array
      */
@@ -696,7 +696,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<37, Prefecture>
+     * @psalm-var non-empty-array<37, Prefecture>
      *
      * @var array
      */
@@ -715,7 +715,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<38, Prefecture>
+     * @psalm-var non-empty-array<38, Prefecture>
      *
      * @var array
      */
@@ -734,7 +734,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<39, Prefecture>
+     * @psalm-var non-empty-array<39, Prefecture>
      *
      * @var array
      */
@@ -753,7 +753,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<40, Prefecture>
+     * @psalm-var non-empty-array<40, Prefecture>
      *
      * @var array
      */
@@ -772,7 +772,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<41, Prefecture>
+     * @psalm-var non-empty-array<41, Prefecture>
      *
      * @var array
      */
@@ -791,7 +791,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<42, Prefecture>
+     * @psalm-var non-empty-array<42, Prefecture>
      *
      * @var array
      */
@@ -810,7 +810,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<43, Prefecture>
+     * @psalm-var non-empty-array<43, Prefecture>
      *
      * @var array
      */
@@ -829,7 +829,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<44, Prefecture>
+     * @psalm-var non-empty-array<44, Prefecture>
      *
      * @var array
      */
@@ -848,7 +848,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<45, Prefecture>
+     * @psalm-var non-empty-array<45, Prefecture>
      *
      * @var array
      */
@@ -867,7 +867,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<46, Prefecture>
+     * @psalm-var non-empty-array<46, Prefecture>
      *
      * @var array
      */
@@ -886,7 +886,7 @@ final class PrefectureConstant
     ];
 
     /**
-     * @psalm-var array<47, Prefecture>
+     * @psalm-var non-empty-array<47, Prefecture>
      *
      * @var array
      */

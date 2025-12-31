@@ -12,8 +12,8 @@ namespace BVP\Prefecture\Tests;
 final class PrefectureDataProvider
 {
     /**
-     * @psalm-return list<array{
-     *     expected: list<Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     expected: non-empty-list<Prefecture>,
      * }>
      *
      * @return array
@@ -76,9 +76,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<int<1, 48>>|list<list<int<1, 48>>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 48>>|non-empty-list<non-empty-list<int<1, 48>>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -114,9 +114,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -175,9 +175,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -213,9 +213,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -251,9 +251,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -289,9 +289,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -327,9 +327,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<int<1, 9>>|list<list<int<1, 9>>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 9>>|non-empty-list<non-empty-list<int<1, 9>>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -421,9 +421,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -515,9 +515,9 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
-     *     expected: array<int<1, 47>, Prefecture>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
+     *     expected: non-empty-array<int<1, 47>, Prefecture>,
      * }>
      *
      * @return array
@@ -609,8 +609,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<int<1, 47>>|list<list<int<1, 47>>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 47>>|non-empty-list<non-empty-list<int<1, 47>>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -631,8 +631,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -661,8 +661,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -683,8 +683,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -705,8 +705,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -727,8 +727,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -749,8 +749,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<int<1, 8>>|list<list<int<1, 8>>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<int<1, 8>>|non-empty-list<non-empty-list<int<1, 8>>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -771,8 +771,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *
@@ -793,8 +793,8 @@ final class PrefectureDataProvider
     }
 
     /**
-     * @psalm-return list<array{
-     *     arguments: list<non-empty-string>|list<list<non-empty-string>>,
+     * @psalm-return non-empty-list<array{
+     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
      *     expected: Prefecture|false,
      * }>
      *

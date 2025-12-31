@@ -28,14 +28,34 @@ use Illuminate\Support\Collection;
  * @psalm-method static Prefecture byRegionName(mixed ...$arguments)
  * @psalm-method static Prefecture byRegionShortName(mixed ...$arguments)
  *
+ * @method static array<int<1, 47>, Prefecture> all()
+ * @method static array<int<1, 47>, Prefecture> byNumberList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byShortNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byHiraganaNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byKatakanaNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byEnglishNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionNumberList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionShortNameList(mixed ...$arguments)
+ * @method static Prefecture byNumber(mixed ...$arguments)
+ * @method static Prefecture byName(mixed ...$arguments)
+ * @method static Prefecture byShortName(mixed ...$arguments)
+ * @method static Prefecture byHiraganaName(mixed ...$arguments)
+ * @method static Prefecture byKatakanaName(mixed ...$arguments)
+ * @method static Prefecture byEnglishName(mixed ...$arguments)
+ * @method static Prefecture byRegionNumber(mixed ...$arguments)
+ * @method static Prefecture byRegionName(mixed ...$arguments)
+ * @method static Prefecture byRegionShortName(mixed ...$arguments)
+ *
  * @author shimomo
  */
 final class Prefecture implements PrefectureInterface
 {
     /**
-     * @psalm-var \BVP\Prefecture\PrefectureInterface|null
+     * @psalm-var ?\BVP\Prefecture\PrefectureInterface
      *
-     * @var \BVP\Prefecture\PrefectureInterface|null
+     * @var ?\BVP\Prefecture\PrefectureInterface
      */
     private static ?PrefectureInterface $instance;
 
@@ -56,7 +76,7 @@ final class Prefecture implements PrefectureInterface
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      */
     public function __call(string $name, array $arguments): ?array
     {
@@ -71,7 +91,7 @@ final class Prefecture implements PrefectureInterface
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      */
     public static function __callStatic(string $name, array $arguments): ?array
     {
@@ -80,10 +100,10 @@ final class Prefecture implements PrefectureInterface
     }
 
     /**
-     * @psalm-param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @psalm-return \BVP\Prefecture\PrefectureInterface
      *
-     * @param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @return \BVP\Prefecture\PrefectureInterface
      */
     #[\Override]
@@ -93,10 +113,10 @@ final class Prefecture implements PrefectureInterface
     }
 
     /**
-     * @psalm-param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @psalm-return \BVP\Prefecture\PrefectureInterface
      *
-     * @param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @return \BVP\Prefecture\PrefectureInterface
      */
     #[\Override]

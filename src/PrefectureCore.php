@@ -28,6 +28,26 @@ use Shimomo\Helper\Arr;
  * @psalm-method Prefecture byRegionName(mixed ...$arguments)
  * @psalm-method Prefecture byRegionShortName(mixed ...$arguments)
  *
+ * @method static array<int<1, 47>, Prefecture> all()
+ * @method static array<int<1, 47>, Prefecture> byNumberList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byShortNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byHiraganaNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byKatakanaNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byEnglishNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionNumberList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionNameList(mixed ...$arguments)
+ * @method static array<int<1, 47>, Prefecture> byRegionShortNameList(mixed ...$arguments)
+ * @method static Prefecture byNumber(mixed ...$arguments)
+ * @method static Prefecture byName(mixed ...$arguments)
+ * @method static Prefecture byShortName(mixed ...$arguments)
+ * @method static Prefecture byHiraganaName(mixed ...$arguments)
+ * @method static Prefecture byKatakanaName(mixed ...$arguments)
+ * @method static Prefecture byEnglishName(mixed ...$arguments)
+ * @method static Prefecture byRegionNumber(mixed ...$arguments)
+ * @method static Prefecture byRegionName(mixed ...$arguments)
+ * @method static Prefecture byRegionShortName(mixed ...$arguments)
+ *
  * @author shimomo
  */
 final class PrefectureCore implements PrefectureCoreInterface
@@ -63,7 +83,7 @@ final class PrefectureCore implements PrefectureCoreInterface
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      */
     public function __call(string $name, array $arguments): ?array
     {
@@ -77,7 +97,7 @@ final class PrefectureCore implements PrefectureCoreInterface
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      * @throws \BadMethodCallException
      */
     private function resolveMethod(string $name, array $arguments): ?array
@@ -118,7 +138,7 @@ final class PrefectureCore implements PrefectureCoreInterface
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      * @throws \InvalidArgumentException
      */
     private function byList(string $name, array $arguments): ?array
@@ -169,11 +189,11 @@ final class PrefectureCore implements PrefectureCoreInterface
     /**
      * @psalm-param non-empty-string $name
      * @psalm-param list<mixed> $arguments
-     * @psalm-return Prefecture|null
+     * @psalm-return ?Prefecture
      *
      * @param string $name
      * @param array $arguments
-     * @return array|null
+     * @return ?array
      * @throws \InvalidArgumentException
      */
     private function by(string $name, array $arguments): ?array

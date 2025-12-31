@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 final class PrefectureTest extends TestCase
 {
     /**
-     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-param non-empty-array<int<1, 47>, Prefecture> $expected
      * @psalm-return void
      *
      * @param array $expected
@@ -33,8 +33,8 @@ final class PrefectureTest extends TestCase
     }
 
     /**
-     * @psalm-param list<int<1, 47>>|list<list<int<1, 47>>> $arguments
-     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-param non-empty-list<int<1, 47>>|non-empty-list<non-empty-list<int<1, 47>>> $arguments
+     * @psalm-param non-empty-array<int<1, 47>, Prefecture> $expected
      * @psalm-return void
      *
      * @param array $arguments
@@ -48,8 +48,8 @@ final class PrefectureTest extends TestCase
     }
 
     /**
-     * @psalm-param list<non-empty-string>|list<list<non-empty-string>> $arguments
-     * @psalm-param array<int<1, 47>, Prefecture> $expected
+     * @psalm-param non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>> $arguments
+     * @psalm-param non-empty-array<int<1, 47>, Prefecture> $expected
      * @psalm-return void
      *
      * @param array $arguments

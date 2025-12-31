@@ -10,19 +10,19 @@ namespace BVP\Prefecture;
 interface PrefectureInterface
 {
     /**
-     * @psalm-param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @psalm-return \BVP\Prefecture\PrefectureInterface
      *
-     * @param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function getInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface;
 
     /**
-     * @psalm-param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @psalm-return \BVP\Prefecture\PrefectureInterface
      *
-     * @param \BVP\Prefecture\PrefectureCoreInterface|null $prefectureCore
+     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
      * @return \BVP\Prefecture\PrefectureInterface
      */
     public static function createInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface;
