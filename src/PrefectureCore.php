@@ -117,7 +117,7 @@ final class PrefectureCore implements PrefectureCoreInterface
         }
 
         throw new \BadMethodCallException(
-            __METHOD__ . "() - Call to undefined method '" . self::class . "::{$name}()'."
+            __METHOD__ . "() - Call to undefined method `" . self::class . "::{$name}()`."
         );
     }
 
@@ -145,7 +145,7 @@ final class PrefectureCore implements PrefectureCoreInterface
     {
         if (($countArguments = count($arguments)) === 0) {
             throw new \InvalidArgumentException(
-                __METHOD__ . "() - Too few arguments to function " . self::class . "::by{$name}(), " .
+                __METHOD__ . "() - Too few arguments to function `" . self::class . "::by{$name}()`, " .
                 "$countArguments passed and exactly 1 expected."
             );
         }
@@ -155,8 +155,8 @@ final class PrefectureCore implements PrefectureCoreInterface
         foreach ($flattenArguments as $flattenArgument) {
             if (!is_string($flattenArgument) && !is_int($flattenArgument)) {
                 throw new \InvalidArgumentException(
-                    __METHOD__ . "() - Argument passed to function " . self::class .
-                    "::by{$name}() must be of type string or int, " . gettype($flattenArgument) . " given."
+                    __METHOD__ . "() - Argument passed to function `" . self::class .
+                    "::by{$name}()` must be of type string or int, " . gettype($flattenArgument) . " given."
                 );
             }
         }
@@ -201,7 +201,7 @@ final class PrefectureCore implements PrefectureCoreInterface
         if (($countArguments = count($arguments)) !== 1) {
             $messageType = $countArguments === 0 ? 'few' : 'many';
             throw new \InvalidArgumentException(
-                __METHOD__ . "() - Too {$messageType} arguments to function " . self::class . "::by{$name}(), " .
+                __METHOD__ . "() - Too {$messageType} arguments to function `" . self::class . "::by{$name}()`, " .
                 "{$countArguments} passed and exactly 1 expected."
             );
         }
@@ -210,8 +210,8 @@ final class PrefectureCore implements PrefectureCoreInterface
         $flattenArguments = Arr::flatten($arguments);
         if (!is_string($flattenArguments[0]) && !is_int($flattenArguments[0])) {
             throw new \InvalidArgumentException(
-                __METHOD__ . "() - Argument passed to function " . self::class .
-                "::by{$name}() must be of type string or int, " . gettype($flattenArguments[0]) . " given."
+                __METHOD__ . "() - Argument passed to function `" . self::class .
+                "::by{$name}()` must be of type string or int, " . gettype($flattenArguments[0]) . " given."
             );
         }
 

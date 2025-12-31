@@ -311,7 +311,7 @@ final class PrefectureTest extends TestCase
         $this->expectException(\BadMethodCallException::class);
         $this->expectExceptionMessage(
             "BVP\Prefecture\PrefectureCore::resolveMethod() - " .
-            "Call to undefined method 'BVP\Prefecture\PrefectureCore::ghost()'."
+            "Call to undefined method `BVP\Prefecture\PrefectureCore::ghost()`."
         );
 
         /** @psalm-suppress UndefinedMagicMethod */
@@ -328,7 +328,7 @@ final class PrefectureTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(
             "BVP\Prefecture\PrefectureCore::by() - " .
-            "Too few arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "Too few arguments to function `BVP\Prefecture\PrefectureCore::byNumber()`, " .
             "0 passed and exactly 1 expected."
         );
 
@@ -345,7 +345,7 @@ final class PrefectureTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $this->expectExceptionMessage(
             "BVP\Prefecture\PrefectureCore::by() - " .
-            "Too many arguments to function BVP\Prefecture\PrefectureCore::byNumber(), " .
+            "Too many arguments to function `BVP\Prefecture\PrefectureCore::byNumber()`, " .
             "2 passed and exactly 1 expected."
         );
 
