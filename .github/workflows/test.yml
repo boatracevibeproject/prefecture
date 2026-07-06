@@ -23,20 +23,20 @@ jobs:
           - '8.4'
           - '8.5'
         phpunit-version:
-          - '10.0'
-          - '11.0'
-          - '12.0'
+          - '10.5.62'
+          - '11.5.50'
+          - '12.5.8'
           - '13.0'
         dependency-version:
           - prefer-lowest
           - prefer-stable
         exclude:
           - php-version: '8.1'
-            phpunit-version: '11.0'
+            phpunit-version: '11.5.50'
           - php-version: '8.1'
-            phpunit-version: '12.0'
+            phpunit-version: '12.5.8'
           - php-version: '8.2'
-            phpunit-version: '12.0'
+            phpunit-version: '12.5.8'
           - php-version: '8.1'
             phpunit-version: '13.0'
           - php-version: '8.2'
