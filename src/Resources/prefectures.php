@@ -13,6 +13,9 @@ return [
         'region_number' => 1,
         'region_name' => '北海道地方',
         'region_short_name' => '北海道',
+        'region_hiragana_name' => 'ほっかいどうちほう',
+        'region_katakana_name' => 'ホッカイドウチホウ',
+        'region_english_name' => 'hokkaido',
     ],
     [
         'number' => 2,
@@ -24,6 +27,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 3,
@@ -35,6 +41,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 4,
@@ -46,6 +55,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 5,
@@ -57,6 +69,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 6,
@@ -68,6 +83,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 7,
@@ -79,6 +97,9 @@ return [
         'region_number' => 2,
         'region_name' => '東北地方',
         'region_short_name' => '東北',
+        'region_hiragana_name' => 'とうほくちほう',
+        'region_katakana_name' => 'トウホクチホウ',
+        'region_english_name' => 'tohoku',
     ],
     [
         'number' => 8,
@@ -90,6 +111,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 9,
@@ -101,6 +125,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 10,
@@ -112,6 +139,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 11,
@@ -123,6 +153,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 12,
@@ -134,6 +167,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 13,
@@ -145,6 +181,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 14,
@@ -156,6 +195,9 @@ return [
         'region_number' => 3,
         'region_name' => '関東地方',
         'region_short_name' => '関東',
+        'region_hiragana_name' => 'かんとうちほう',
+        'region_katakana_name' => 'カントウチホウ',
+        'region_english_name' => 'kanto',
     ],
     [
         'number' => 15,
@@ -167,6 +209,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 16,
@@ -178,6 +223,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 17,
@@ -189,6 +237,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 18,
@@ -200,6 +251,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 19,
@@ -211,6 +265,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 20,
@@ -222,6 +279,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 21,
@@ -233,6 +293,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 22,
@@ -244,6 +307,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 23,
@@ -255,6 +321,9 @@ return [
         'region_number' => 4,
         'region_name' => '中部地方',
         'region_short_name' => '中部',
+        'region_hiragana_name' => 'ちゅうぶちほう',
+        'region_katakana_name' => 'チュウブチホウ',
+        'region_english_name' => 'chubu',
     ],
     [
         'number' => 24,
@@ -266,6 +335,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 25,
@@ -277,6 +349,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 26,
@@ -288,6 +363,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 27,
@@ -299,6 +377,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 28,
@@ -310,6 +391,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 29,
@@ -321,6 +405,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 30,
@@ -332,6 +419,9 @@ return [
         'region_number' => 5,
         'region_name' => '近畿地方',
         'region_short_name' => '近畿',
+        'region_hiragana_name' => 'きんきちほう',
+        'region_katakana_name' => 'キンキチホウ',
+        'region_english_name' => 'kinki',
     ],
     [
         'number' => 31,
@@ -343,6 +433,9 @@ return [
         'region_number' => 6,
         'region_name' => '中国地方',
         'region_short_name' => '中国',
+        'region_hiragana_name' => 'ちゅうごくちほう',
+        'region_katakana_name' => 'チュウゴクチホウ',
+        'region_english_name' => 'chugoku',
     ],
     [
         'number' => 32,
@@ -354,6 +447,9 @@ return [
         'region_number' => 6,
         'region_name' => '中国地方',
         'region_short_name' => '中国',
+        'region_hiragana_name' => 'ちゅうごくちほう',
+        'region_katakana_name' => 'チュウゴクチホウ',
+        'region_english_name' => 'chugoku',
     ],
     [
         'number' => 33,
@@ -365,6 +461,9 @@ return [
         'region_number' => 6,
         'region_name' => '中国地方',
         'region_short_name' => '中国',
+        'region_hiragana_name' => 'ちゅうごくちほう',
+        'region_katakana_name' => 'チュウゴクチホウ',
+        'region_english_name' => 'chugoku',
     ],
     [
         'number' => 34,
@@ -376,6 +475,9 @@ return [
         'region_number' => 6,
         'region_name' => '中国地方',
         'region_short_name' => '中国',
+        'region_hiragana_name' => 'ちゅうごくちほう',
+        'region_katakana_name' => 'チュウゴクチホウ',
+        'region_english_name' => 'chugoku',
     ],
     [
         'number' => 35,
@@ -387,6 +489,9 @@ return [
         'region_number' => 6,
         'region_name' => '中国地方',
         'region_short_name' => '中国',
+        'region_hiragana_name' => 'ちゅうごくちほう',
+        'region_katakana_name' => 'チュウゴクチホウ',
+        'region_english_name' => 'chugoku',
     ],
     [
         'number' => 36,
@@ -398,6 +503,9 @@ return [
         'region_number' => 7,
         'region_name' => '四国地方',
         'region_short_name' => '四国',
+        'region_hiragana_name' => 'しこくちほう',
+        'region_katakana_name' => 'シコクチホウ',
+        'region_english_name' => 'shikoku',
     ],
     [
         'number' => 37,
@@ -409,6 +517,9 @@ return [
         'region_number' => 7,
         'region_name' => '四国地方',
         'region_short_name' => '四国',
+        'region_hiragana_name' => 'しこくちほう',
+        'region_katakana_name' => 'シコクチホウ',
+        'region_english_name' => 'shikoku',
     ],
     [
         'number' => 38,
@@ -420,6 +531,9 @@ return [
         'region_number' => 7,
         'region_name' => '四国地方',
         'region_short_name' => '四国',
+        'region_hiragana_name' => 'しこくちほう',
+        'region_katakana_name' => 'シコクチホウ',
+        'region_english_name' => 'shikoku',
     ],
     [
         'number' => 39,
@@ -431,6 +545,9 @@ return [
         'region_number' => 7,
         'region_name' => '四国地方',
         'region_short_name' => '四国',
+        'region_hiragana_name' => 'しこくちほう',
+        'region_katakana_name' => 'シコクチホウ',
+        'region_english_name' => 'shikoku',
     ],
     [
         'number' => 40,
@@ -442,6 +559,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 41,
@@ -453,6 +573,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 42,
@@ -464,6 +587,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 43,
@@ -475,6 +601,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 44,
@@ -486,6 +615,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 45,
@@ -497,6 +629,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 46,
@@ -508,6 +643,9 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
     [
         'number' => 47,
@@ -519,5 +657,8 @@ return [
         'region_number' => 8,
         'region_name' => '九州地方',
         'region_short_name' => '九州',
+        'region_hiragana_name' => 'きゅうしゅうちほう',
+        'region_katakana_name' => 'キュウシュウチホウ',
+        'region_english_name' => 'kyushu',
     ],
 ];

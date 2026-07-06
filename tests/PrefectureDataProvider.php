@@ -4,813 +4,132 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture\Tests;
 
+use BVP\Prefecture\Enums\Prefecture as PrefectureEnum;
+use BVP\Prefecture\Enums\Region as RegionEnum;
+
 /**
- * @psalm-import-type Prefecture from \BVP\Prefecture\PrefectureType
- *
  * @author shimomo
  */
 final class PrefectureDataProvider
 {
     /**
-     * @psalm-return non-empty-list<array{
-     *     expected: non-empty-list<Prefecture>,
+     * @return non-empty-list<array{
+     *   number: int|string,
+     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
-     *
-     * @return array
      */
-    public static function allProvider(): array
+    public static function prefectureFromProvider(): array
     {
         return [
-            [
-                'expected' => array_merge(
-                    PrefectureConstant::$hokkaido,
-                    PrefectureConstant::$aomori,
-                    PrefectureConstant::$iwate,
-                    PrefectureConstant::$miyagi,
-                    PrefectureConstant::$akita,
-                    PrefectureConstant::$yamagata,
-                    PrefectureConstant::$fukushima,
-                    PrefectureConstant::$ibaraki,
-                    PrefectureConstant::$tochigi,
-                    PrefectureConstant::$gunma,
-                    PrefectureConstant::$saitama,
-                    PrefectureConstant::$chiba,
-                    PrefectureConstant::$tokyo,
-                    PrefectureConstant::$kanagawa,
-                    PrefectureConstant::$niigata,
-                    PrefectureConstant::$toyama,
-                    PrefectureConstant::$ishikawa,
-                    PrefectureConstant::$fukui,
-                    PrefectureConstant::$yamanashi,
-                    PrefectureConstant::$nagano,
-                    PrefectureConstant::$gifu,
-                    PrefectureConstant::$shizuoka,
-                    PrefectureConstant::$aichi,
-                    PrefectureConstant::$mie,
-                    PrefectureConstant::$shiga,
-                    PrefectureConstant::$kyoto,
-                    PrefectureConstant::$osaka,
-                    PrefectureConstant::$hyogo,
-                    PrefectureConstant::$nara,
-                    PrefectureConstant::$wakayama,
-                    PrefectureConstant::$tottori,
-                    PrefectureConstant::$shimane,
-                    PrefectureConstant::$okayama,
-                    PrefectureConstant::$hiroshima,
-                    PrefectureConstant::$yamaguchi,
-                    PrefectureConstant::$tokushima,
-                    PrefectureConstant::$kagawa,
-                    PrefectureConstant::$ehime,
-                    PrefectureConstant::$kochi,
-                    PrefectureConstant::$fukuoka,
-                    PrefectureConstant::$saga,
-                    PrefectureConstant::$nagasaki,
-                    PrefectureConstant::$kumamoto,
-                    PrefectureConstant::$oita,
-                    PrefectureConstant::$miyazaki,
-                    PrefectureConstant::$kagoshima,
-                    PrefectureConstant::$okinawa,
-                ),
-            ],
+            ['value' => 0, 'expected' => null],
+            ['value' => 1, 'expected' => PrefectureEnum::hokkaido],
+            ['value' => 2, 'expected' => PrefectureEnum::aomori],
+            ['value' => '', 'expected' => null],
+            ['value' => '青森県', 'expected' => PrefectureEnum::aomori],
+            ['value' => '青森', 'expected' => PrefectureEnum::aomori],
+            ['value' => 'あおもりけん', 'expected' => PrefectureEnum::aomori],
+            ['value' => 'アオモリケン', 'expected' => PrefectureEnum::aomori],
+            ['value' => 'aomori', 'expected' => PrefectureEnum::aomori],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<int<1, 48>>|non-empty-list<non-empty-list<int<1, 48>>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   number: int,
+     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
-     *
-     * @return array
      */
-    public static function byNumberListProvider(): array
+    public static function prefectureFromNumberProvider(): array
     {
         return [
-            [
-                'arguments' => [13],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [[13]],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [13, 34],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [[13, 34]],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [13, 34, 48],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [[13, 34, 48]],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
+            ['number' => 0, 'expected' => null],
+            ['number' => 1, 'expected' => PrefectureEnum::hokkaido],
+            ['number' => 2, 'expected' => PrefectureEnum::aomori],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   name: string,
+     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
-     *
-     * @return array
      */
-    public static function byNameListProvider(): array
+    public static function prefectureFromNameProvider(): array
     {
         return [
-            [
-                'arguments' => ['東京都'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['東京都']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['東京都', '広島県'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京都', '広島県']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['東京都', '広島県', '都道府県'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京都', '広島県', '都道府県']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima],
-            [
-                'arguments' => ['東京'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['東京']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['東京', '広島'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京', '広島']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['東京', '広島', '都道府県'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京', '広島', '都道府県']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
+            ['name' => '', 'expected' => null],
+            ['name' => '青森県', 'expected' => PrefectureEnum::aomori],
+            ['name' => '青森', 'expected' => PrefectureEnum::aomori],
+            ['name' => 'あおもりけん', 'expected' => PrefectureEnum::aomori],
+            ['name' => 'アオモリケン', 'expected' => PrefectureEnum::aomori],
+            ['name' => 'aomori', 'expected' => PrefectureEnum::aomori],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   name: string,
+     *   expected: \BVP\Prefecture\Enums\Prefecture,
      * }>
-     *
-     * @return array
      */
-    public static function byShortNameListProvider(): array
+    public static function prefectureRegionProvider(): array
     {
         return [
-            [
-                'arguments' => ['東京'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['東京']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['東京', '広島'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京', '広島']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['東京', '広島', '都道府県'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['東京', '広島', '都道府県']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
+            ['name' => 'aomori', 'expected' => RegionEnum::tohoku],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   number: int|string,
+     *   expected: ?\BVP\Prefecture\Enums\Region,
      * }>
-     *
-     * @return array
      */
-    public static function byHiraganaNameListProvider(): array
+    public static function regionFromProvider(): array
     {
         return [
-            [
-                'arguments' => ['とうきょうと'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['とうきょうと']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['とうきょうと', 'ひろしまけん'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['とうきょうと', 'ひろしまけん']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['とうきょうと', 'ひろしまけん', 'とどうふけん'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['とうきょうと', 'ひろしまけん', 'とどうふけん']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
+            ['value' => 0, 'expected' => null],
+            ['value' => 1, 'expected' => RegionEnum::hokkaido],
+            ['value' => 2, 'expected' => RegionEnum::tohoku],
+            ['value' => '', 'expected' => null],
+            ['value' => '東北地方', 'expected' => RegionEnum::tohoku],
+            ['value' => '東北', 'expected' => RegionEnum::tohoku],
+            ['value' => 'とうほくちほう', 'expected' => RegionEnum::tohoku],
+            ['value' => 'トウホクチホウ', 'expected' => RegionEnum::tohoku],
+            ['value' => 'tohoku', 'expected' => RegionEnum::tohoku],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   number: int,
+     *   expected: ?\BVP\Prefecture\Enums\Region,
      * }>
-     *
-     * @return array
      */
-    public static function byKatakanaNameListProvider(): array
+    public static function regionFromNumberProvider(): array
     {
         return [
-            [
-                'arguments' => ['トウキョウト'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['トウキョウト']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['トウキョウト', 'ヒロシマケン'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['トウキョウト', 'ヒロシマケン']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['トウキョウト', 'ヒロシマケン', 'トドウフケン'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['トウキョウト', 'ヒロシマケン', 'トドウフケン']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
+            ['number' => 0, 'expected' => null],
+            ['number' => 1, 'expected' => RegionEnum::hokkaido],
+            ['number' => 2, 'expected' => RegionEnum::tohoku],
         ];
     }
 
     /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
+     * @return non-empty-list<array{
+     *   name: string,
+     *   expected: ?\BVP\Prefecture\Enums\Region,
      * }>
-     *
-     * @return array
      */
-    public static function byEnglishNameListProvider(): array
+    public static function regionFromNameProvider(): array
     {
         return [
-            [
-                'arguments' => ['tokyo'],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => [['tokyo']],
-                'expected' => PrefectureConstant::$tokyo,
-            ],
-            [
-                'arguments' => ['tokyo', 'hiroshima'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['tokyo', 'hiroshima']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => ['tokyo', 'hiroshima', 'prefecture'],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-            [
-                'arguments' => [['tokyo', 'hiroshima', 'prefecture']],
-                'expected' => PrefectureConstant::$tokyo + PrefectureConstant::$hiroshima,
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<int<1, 9>>|non-empty-list<non-empty-list<int<1, 9>>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionNumberListProvider(): array
-    {
-        return [
-            [
-                'arguments' => [3],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa,
-            ],
-            [
-                'arguments' => [[3]],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa,
-            ],
-            [
-                'arguments' => [3, 6],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [[3, 6]],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [3, 6, 9],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [[3, 6, 9]],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionNameListProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['関東地方'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa,
-            ],
-            [
-                'arguments' => [['関東地方']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa,
-            ],
-            [
-                'arguments' => ['関東地方', '中国地方'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [['関東地方', '中国地方']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => ['関東地方', '中国地方', '地域'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [['関東地方', '中国地方', '地域']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: non-empty-array<int<1, 47>, Prefecture>,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionShortNameListProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['関東'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-            ],
-            [
-                'arguments' => [['関東']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-            ],
-            [
-                'arguments' => ['関東', '中国'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [['関東', '中国']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => ['関東', '中国', '地域'],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-            [
-                'arguments' => [['関東', '中国', '地域']],
-                'expected' => PrefectureConstant::$ibaraki
-                    + PrefectureConstant::$tochigi
-                    + PrefectureConstant::$gunma
-                    + PrefectureConstant::$saitama
-                    + PrefectureConstant::$chiba
-                    + PrefectureConstant::$tokyo
-                    + PrefectureConstant::$kanagawa
-                    + PrefectureConstant::$tottori
-                    + PrefectureConstant::$shimane
-                    + PrefectureConstant::$okayama
-                    + PrefectureConstant::$hiroshima
-                    + PrefectureConstant::$yamaguchi,
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<int<1, 47>>|non-empty-list<non-empty-list<int<1, 47>>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byNumberProvider(): array
-    {
-        return [
-            [
-                'arguments' => [13],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [[13]],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['東京都'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['東京都']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => ['東京'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['東京']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byShortNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['東京'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['東京']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byHiraganaNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['とうきょうと'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['とうきょうと']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byKatakanaNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['トウキョウト'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['トウキョウト']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byEnglishNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['tokyo'],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-            [
-                'arguments' => [['tokyo']],
-                'expected' => reset(PrefectureConstant::$tokyo),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<int<1, 8>>|non-empty-list<non-empty-list<int<1, 8>>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionNumberProvider(): array
-    {
-        return [
-            [
-                'arguments' => [3],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
-            [
-                'arguments' => [[3]],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['関東地方'],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
-            [
-                'arguments' => [['関東地方']],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
-        ];
-    }
-
-    /**
-     * @psalm-return non-empty-list<array{
-     *     arguments: non-empty-list<non-empty-string>|non-empty-list<non-empty-list<non-empty-string>>,
-     *     expected: Prefecture|false,
-     * }>
-     *
-     * @return array
-     */
-    public static function byRegionShortNameProvider(): array
-    {
-        return [
-            [
-                'arguments' => ['関東'],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
-            [
-                'arguments' => [['関東']],
-                'expected' => reset(PrefectureConstant::$ibaraki),
-            ],
+            ['name' => '', 'expected' => null],
+            ['name' => '東北地方', 'expected' => RegionEnum::tohoku],
+            ['name' => '東北', 'expected' => RegionEnum::tohoku],
+            ['name' => 'とうほくちほう', 'expected' => RegionEnum::tohoku],
+            ['name' => 'トウホクチホウ', 'expected' => RegionEnum::tohoku],
+            ['name' => 'tohoku', 'expected' => RegionEnum::tohoku],
         ];
     }
 }

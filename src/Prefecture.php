@@ -4,133 +4,66 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture;
 
+use BVP\Prefecture\Enums\Prefecture as PrefectureEnum;
+use BVP\Prefecture\Enums\Region as RegionEnum;
+
 /**
- * @psalm-import-type Prefecture from PrefectureType
- * @psalm-method static array<int<1, 47>, Prefecture> all()
- * @psalm-method static array<int<1, 47>, Prefecture> byNumberList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byShortNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byHiraganaNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byKatakanaNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byEnglishNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byRegionNumberList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byRegionNameList(mixed ...$arguments)
- * @psalm-method static array<int<1, 47>, Prefecture> byRegionShortNameList(mixed ...$arguments)
- * @psalm-method static Prefecture byNumber(mixed ...$arguments)
- * @psalm-method static Prefecture byName(mixed ...$arguments)
- * @psalm-method static Prefecture byShortName(mixed ...$arguments)
- * @psalm-method static Prefecture byHiraganaName(mixed ...$arguments)
- * @psalm-method static Prefecture byKatakanaName(mixed ...$arguments)
- * @psalm-method static Prefecture byEnglishName(mixed ...$arguments)
- * @psalm-method static Prefecture byRegionNumber(mixed ...$arguments)
- * @psalm-method static Prefecture byRegionName(mixed ...$arguments)
- * @psalm-method static Prefecture byRegionShortName(mixed ...$arguments)
- *
- * @method static array<int<1, 47>, Prefecture> all()
- * @method static array<int<1, 47>, Prefecture> byNumberList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byShortNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byHiraganaNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byKatakanaNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byEnglishNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byRegionNumberList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byRegionNameList(mixed ...$arguments)
- * @method static array<int<1, 47>, Prefecture> byRegionShortNameList(mixed ...$arguments)
- * @method static Prefecture byNumber(mixed ...$arguments)
- * @method static Prefecture byName(mixed ...$arguments)
- * @method static Prefecture byShortName(mixed ...$arguments)
- * @method static Prefecture byHiraganaName(mixed ...$arguments)
- * @method static Prefecture byKatakanaName(mixed ...$arguments)
- * @method static Prefecture byEnglishName(mixed ...$arguments)
- * @method static Prefecture byRegionNumber(mixed ...$arguments)
- * @method static Prefecture byRegionName(mixed ...$arguments)
- * @method static Prefecture byRegionShortName(mixed ...$arguments)
- *
  * @author shimomo
  */
-final class Prefecture implements PrefectureInterface
+final class Prefecture
 {
     /**
-     * @psalm-var ?\BVP\Prefecture\PrefectureInterface
-     *
-     * @var ?\BVP\Prefecture\PrefectureInterface
+     * @param int|string $value
+     * @return ?\BVP\Prefecture\Enums\Prefecture
      */
-    private static ?PrefectureInterface $instance;
-
-    /**
-     * @psalm-param \BVP\Prefecture\PrefectureCoreInterface $prefecture
-     *
-     * @param \BVP\Prefecture\PrefectureCoreInterface $prefecture
-     */
-    public function __construct(private readonly PrefectureCoreInterface $prefecture)
+    public static function from(int|string $value): ?PrefectureEnum
     {
-        //
+        return self::fromNumber((int) $value) ?? self::fromName((string) $value);
     }
 
     /**
-     * @psalm-param non-empty-string $name
-     * @psalm-param list<mixed> $arguments
-     * @psalm-return array<int<1, 47>, Prefecture>|Prefecture|null
-     *
+     * @param int $number
+     * @return ?\BVP\Prefecture\Enums\Prefecture
+     */
+    public static function fromNumber(int $number): ?PrefectureEnum
+    {
+        return PrefectureEnum::tryFrom($number);
+    }
+
+    /**
      * @param string $name
-     * @param array $arguments
-     * @return ?array
+     * @return ?\BVP\Prefecture\Enums\Prefecture
      */
-    public function __call(string $name, array $arguments): ?array
+    public static function fromName(string $name): ?PrefectureEnum
     {
-        /** @psalm-var array<int<1, 47>, Prefecture>|Prefecture|null */
-        return $this->prefecture->$name(...$arguments);
+        return PrefectureEnum::fromName($name);
     }
 
     /**
-     * @psalm-param non-empty-string $name
-     * @psalm-param list<mixed> $arguments
-     * @psalm-return array<int<1, 47>, Prefecture>|Prefecture|null
-     *
+     * @param int|string $value
+     * @return ?\BVP\Prefecture\Enums\Region
+     */
+    public static function fromRegion(int|string $value): ?RegionEnum
+    {
+        return self::fromRegionNumber((int) $value) ?? self::fromRegionName((string) $value);
+    }
+
+    /**
+     * @param int $number
+     * @return ?\BVP\Prefecture\Enums\Region
+     */
+
+    public static function fromRegionNumber(int $number): ?RegionEnum
+    {
+        return RegionEnum::tryFrom($number);
+    }
+
+    /**
      * @param string $name
-     * @param array $arguments
-     * @return ?array
+     * @return ?\BVP\Prefecture\Enums\Region
      */
-    public static function __callStatic(string $name, array $arguments): ?array
+    public static function fromRegionName(string $name): ?RegionEnum
     {
-        /** @psalm-var array<int<1, 47>, Prefecture>|Prefecture|null */
-        return self::getInstance()->$name(...$arguments);
-    }
-
-    /**
-     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
-     * @psalm-return \BVP\Prefecture\PrefectureInterface
-     *
-     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
-     * @return \BVP\Prefecture\PrefectureInterface
-     */
-    #[\Override]
-    public static function getInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface
-    {
-        return self::$instance ??= new self($prefectureCore ?? new PrefectureCore());
-    }
-
-    /**
-     * @psalm-param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
-     * @psalm-return \BVP\Prefecture\PrefectureInterface
-     *
-     * @param ?\BVP\Prefecture\PrefectureCoreInterface $prefectureCore
-     * @return \BVP\Prefecture\PrefectureInterface
-     */
-    #[\Override]
-    public static function createInstance(?PrefectureCoreInterface $prefectureCore = null): PrefectureInterface
-    {
-        return self::$instance = new self($prefectureCore ?? new PrefectureCore());
-    }
-
-    /**
-     * @psalm-return void
-     *
-     * @return void
-     */
-    #[\Override]
-    public static function resetInstance(): void
-    {
-        self::$instance = null;
+        return RegionEnum::fromName($name);
     }
 }
