@@ -46,35 +46,35 @@ final class Prefecture
     }
 
     /**
-     * Number lookup takes priority over name lookup: the value is first tried
-     * as a region number via {@see self::fromRegionNumber()}, and only falls
-     * back to {@see self::fromRegionName()} when no matching number is found.
-     * For example, `fromRegion('3')` resolves to region number 3 (Kanto), not
-     * a region literally named "3".
+     * @deprecated Use {@see \BVP\Prefecture\Region::from()} instead. Will be removed in the next major version.
      *
      * @param int|string $value
      * @return ?\BVP\Prefecture\Enums\Region
      */
     public static function fromRegion(int|string $value): ?RegionEnum
     {
-        return self::fromRegionNumber((int) $value) ?? self::fromRegionName((string) $value);
+        return Region::from($value);
     }
 
     /**
+     * @deprecated Use {@see \BVP\Prefecture\Region::fromNumber()} instead. Will be removed in the next major version.
+     *
      * @param int $number
      * @return ?\BVP\Prefecture\Enums\Region
      */
     public static function fromRegionNumber(int $number): ?RegionEnum
     {
-        return RegionEnum::tryFrom($number);
+        return Region::fromNumber($number);
     }
 
     /**
+     * @deprecated Use {@see \BVP\Prefecture\Region::fromName()} instead. Will be removed in the next major version.
+     *
      * @param string $name
      * @return ?\BVP\Prefecture\Enums\Region
      */
     public static function fromRegionName(string $name): ?RegionEnum
     {
-        return RegionEnum::fromName($name);
+        return Region::fromName($name);
     }
 }
