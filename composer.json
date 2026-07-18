@@ -1,6 +1,6 @@
 {
     "name": "bvp/prefecture",
-    "description": "BVP Prefecture",
+    "description": "Converts between Japanese prefecture/region numbers and names, including kanji, hiragana, katakana, and English variants, backed by native PHP enums.",
     "license": "MIT",
     "type": "library",
     "keywords": [
