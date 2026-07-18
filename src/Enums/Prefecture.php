@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture\Enums;
 
+use JsonSerializable;
 use RuntimeException;
 
 /**
  * @author shimomo
  */
-enum Prefecture: int
+enum Prefecture: int implements JsonSerializable
 {
     case hokkaido = 1;
     case aomori = 2;
@@ -141,6 +142,34 @@ enum Prefecture: int
     public function toArray(): ?array
     {
         return self::rows()[$this->value] ?? null;
+    }
+
+    /**
+     * @return array{
+     *   number: int<1, 47>,
+     *   name: non-empty-string,
+     *   short_name: non-empty-string,
+     *   hiragana_name: non-empty-string,
+     *   katakana_name: non-empty-string,
+     *   english_name: non-empty-string,
+     *   region_number: int<1, 8>,
+     *   region_name: non-empty-string,
+     *   region_short_name: non-empty-string,
+     *   region_hiragana_name: non-empty-string,
+     *   region_katakana_name: non-empty-string,
+     *   region_english_name: non-empty-string,
+     * }
+     */
+    #[\Override]
+    public function jsonSerialize(): array
+    {
+        $row = $this->toArray();
+
+        if ($row === null) {
+            throw new RuntimeException("Missing resource row for prefecture: {$this->name}.");
+        }
+
+        return $row;
     }
 
     /**
