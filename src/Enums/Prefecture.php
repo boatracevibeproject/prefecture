@@ -207,7 +207,7 @@ enum Prefecture: int
             return null;
         }
 
-        return self::byName()[$name] ?? null;
+        return self::byName()[strtolower($name)] ?? null;
     }
 
     /**
@@ -230,7 +230,7 @@ enum Prefecture: int
                     $case->englishName(),
                 ] as $variant) {
                     if ($variant !== null) {
-                        $map[$variant] ??= $case;
+                        $map[strtolower($variant)] ??= $case;
                     }
                 }
             }

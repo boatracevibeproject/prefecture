@@ -30,6 +30,8 @@ final class PrefectureDataProvider
             ['value' => 'あおもりけん', 'expected' => PrefectureEnum::aomori],
             ['value' => 'アオモリケン', 'expected' => PrefectureEnum::aomori],
             ['value' => 'aomori', 'expected' => PrefectureEnum::aomori],
+            ['value' => 'Aomori', 'expected' => PrefectureEnum::aomori],
+            ['value' => 'AOMORI', 'expected' => PrefectureEnum::aomori],
         ];
     }
 
@@ -63,6 +65,8 @@ final class PrefectureDataProvider
             ['name' => 'あおもりけん', 'expected' => PrefectureEnum::aomori],
             ['name' => 'アオモリケン', 'expected' => PrefectureEnum::aomori],
             ['name' => 'aomori', 'expected' => PrefectureEnum::aomori],
+            ['name' => 'Aomori', 'expected' => PrefectureEnum::aomori],
+            ['name' => 'AOMORI', 'expected' => PrefectureEnum::aomori],
         ];
     }
 
@@ -97,6 +101,8 @@ final class PrefectureDataProvider
             ['value' => 'とうほくちほう', 'expected' => RegionEnum::tohoku],
             ['value' => 'トウホクチホウ', 'expected' => RegionEnum::tohoku],
             ['value' => 'tohoku', 'expected' => RegionEnum::tohoku],
+            ['value' => 'Tohoku', 'expected' => RegionEnum::tohoku],
+            ['value' => 'TOHOKU', 'expected' => RegionEnum::tohoku],
         ];
     }
 
@@ -130,6 +136,8 @@ final class PrefectureDataProvider
             ['name' => 'とうほくちほう', 'expected' => RegionEnum::tohoku],
             ['name' => 'トウホクチホウ', 'expected' => RegionEnum::tohoku],
             ['name' => 'tohoku', 'expected' => RegionEnum::tohoku],
+            ['name' => 'Tohoku', 'expected' => RegionEnum::tohoku],
+            ['name' => 'TOHOKU', 'expected' => RegionEnum::tohoku],
         ];
     }
 }
