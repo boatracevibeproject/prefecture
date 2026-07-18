@@ -43,22 +43,9 @@ enum Region: int
         static $rows = null;
 
         if ($rows === null) {
-            $prefectures = require __DIR__ . '/../Resources/prefectures.php';
+            $regions = require __DIR__ . '/../Resources/regions.php';
 
-            $rows = [];
-
-            foreach ($prefectures as $prefecture) {
-                if (!isset($rows[$prefecture['region_number']])) {
-                    $rows[$prefecture['region_number']] = [
-                        'number' => $prefecture['region_number'],
-                        'name' => $prefecture['region_name'],
-                        'short_name' => $prefecture['region_short_name'],
-                        'hiragana_name' => $prefecture['region_hiragana_name'],
-                        'katakana_name' => $prefecture['region_katakana_name'],
-                        'english_name' => $prefecture['region_english_name'],
-                    ];
-                }
-            }
+            $rows = array_column($regions, null, 'number');
         }
 
         return $rows;

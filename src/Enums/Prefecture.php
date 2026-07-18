@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace BVP\Prefecture\Enums;
 
+use RuntimeException;
+
 /**
  * @author shimomo
  */
@@ -96,7 +98,25 @@ enum Prefecture: int
         if ($rows === null) {
             $prefectures = require __DIR__ . '/../Resources/prefectures.php';
 
-            $rows = array_column($prefectures, null, 'number');
+            $rows = [];
+
+            foreach ($prefectures as $prefecture) {
+                $regionRow = Region::from($prefecture['region_number'])->toArray();
+
+                if ($regionRow === null) {
+                    throw new RuntimeException(
+                        "Missing region resource row for region number {$prefecture['region_number']}."
+                    );
+                }
+
+                $rows[$prefecture['number']] = $prefecture + [
+                    'region_name' => $regionRow['name'],
+                    'region_short_name' => $regionRow['short_name'],
+                    'region_hiragana_name' => $regionRow['hiragana_name'],
+                    'region_katakana_name' => $regionRow['katakana_name'],
+                    'region_english_name' => $regionRow['english_name'],
+                ];
+            }
         }
 
         return $rows;
