@@ -52,7 +52,7 @@ json_encode(Prefecture::from(2));
 
 ### Available methods
 
-`Prefecture` と `Region`(いずれも `BVP\Prefecture` 名前空間)は、同じ 3 つのルックアップメソッドを持ちます。
+`Prefecture` と `Region`（いずれも `BVP\Prefecture` 名前空間）は、同じ 3 つのルックアップメソッドを持ちます。
 
 | Method | Behavior |
 |---|---|
