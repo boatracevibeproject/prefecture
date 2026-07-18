@@ -14,8 +14,8 @@ final class PrefectureDataProvider
 {
     /**
      * @return non-empty-list<array{
-     *   number: int|string,
-     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
+     *     number: int|string,
+     *     expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
      */
     public static function prefectureFromProvider(): array
@@ -37,8 +37,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   number: int,
-     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
+     *     number: int,
+     *     expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
      */
     public static function prefectureFromNumberProvider(): array
@@ -52,8 +52,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   name: string,
-     *   expected: ?\BVP\Prefecture\Enums\Prefecture,
+     *     name: string,
+     *     expected: ?\BVP\Prefecture\Enums\Prefecture,
      * }>
      */
     public static function prefectureFromNameProvider(): array
@@ -72,8 +72,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   name: string,
-     *   expected: \BVP\Prefecture\Enums\Prefecture,
+     *     name: string,
+     *     expected: \BVP\Prefecture\Enums\Prefecture,
      * }>
      */
     public static function prefectureRegionProvider(): array
@@ -85,8 +85,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   number: int|string,
-     *   expected: ?\BVP\Prefecture\Enums\Region,
+     *     number: int|string,
+     *     expected: ?\BVP\Prefecture\Enums\Region,
      * }>
      */
     public static function regionFromProvider(): array
@@ -108,8 +108,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   number: int,
-     *   expected: ?\BVP\Prefecture\Enums\Region,
+     *     number: int,
+     *     expected: ?\BVP\Prefecture\Enums\Region,
      * }>
      */
     public static function regionFromNumberProvider(): array
@@ -123,8 +123,8 @@ final class PrefectureDataProvider
 
     /**
      * @return non-empty-list<array{
-     *   name: string,
-     *   expected: ?\BVP\Prefecture\Enums\Region,
+     *     name: string,
+     *     expected: ?\BVP\Prefecture\Enums\Region,
      * }>
      */
     public static function regionFromNameProvider(): array

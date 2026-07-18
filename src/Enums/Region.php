@@ -56,12 +56,12 @@ enum Region: int implements JsonSerializable
 
     /**
      * @return ?array{
-     *   number: int<1, 8>,
-     *   name: non-empty-string,
-     *   short_name: non-empty-string,
-     *   hiragana_name: non-empty-string,
-     *   katakana_name: non-empty-string,
-     *   english_name: non-empty-string,
+     *     number: int<1, 8>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
      * }
      */
     public function toArray(): ?array
@@ -71,12 +71,12 @@ enum Region: int implements JsonSerializable
 
     /**
      * @return array{
-     *   number: int<1, 8>,
-     *   name: non-empty-string,
-     *   short_name: non-empty-string,
-     *   hiragana_name: non-empty-string,
-     *   katakana_name: non-empty-string,
-     *   english_name: non-empty-string,
+     *     number: int<1, 8>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
      * }
      */
     #[\Override]

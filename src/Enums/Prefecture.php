@@ -125,18 +125,18 @@ enum Prefecture: int implements JsonSerializable
 
     /**
      * @return ?array{
-     *   number: int<1, 47>,
-     *   name: non-empty-string,
-     *   short_name: non-empty-string,
-     *   hiragana_name: non-empty-string,
-     *   katakana_name: non-empty-string,
-     *   english_name: non-empty-string,
-     *   region_number: int<1, 8>,
-     *   region_name: non-empty-string,
-     *   region_short_name: non-empty-string,
-     *   region_hiragana_name: non-empty-string,
-     *   region_katakana_name: non-empty-string,
-     *   region_english_name: non-empty-string,
+     *     number: int<1, 47>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
+     *     region_number: int<1, 8>,
+     *     region_name: non-empty-string,
+     *     region_short_name: non-empty-string,
+     *     region_hiragana_name: non-empty-string,
+     *     region_katakana_name: non-empty-string,
+     *     region_english_name: non-empty-string,
      * }
      */
     public function toArray(): ?array
@@ -146,18 +146,18 @@ enum Prefecture: int implements JsonSerializable
 
     /**
      * @return array{
-     *   number: int<1, 47>,
-     *   name: non-empty-string,
-     *   short_name: non-empty-string,
-     *   hiragana_name: non-empty-string,
-     *   katakana_name: non-empty-string,
-     *   english_name: non-empty-string,
-     *   region_number: int<1, 8>,
-     *   region_name: non-empty-string,
-     *   region_short_name: non-empty-string,
-     *   region_hiragana_name: non-empty-string,
-     *   region_katakana_name: non-empty-string,
-     *   region_english_name: non-empty-string,
+     *     number: int<1, 47>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
+     *     region_number: int<1, 8>,
+     *     region_name: non-empty-string,
+     *     region_short_name: non-empty-string,
+     *     region_hiragana_name: non-empty-string,
+     *     region_katakana_name: non-empty-string,
+     *     region_english_name: non-empty-string,
      * }
      */
     #[\Override]
