@@ -58,6 +58,51 @@ enum Prefecture: int
     case okinawa = 47;
 
     /**
+     * @return array<int, array{
+     *     number: int<1, 47>,
+     *     name: non-empty-string,
+     *     short_name: non-empty-string,
+     *     hiragana_name: non-empty-string,
+     *     katakana_name: non-empty-string,
+     *     english_name: non-empty-string,
+     *     region_number: int<1, 8>,
+     *     region_name: non-empty-string,
+     *     region_short_name: non-empty-string,
+     *     region_hiragana_name: non-empty-string,
+     *     region_katakana_name: non-empty-string,
+     *     region_english_name: non-empty-string,
+     * }>
+     */
+    private static function rows(): array
+    {
+        /**
+         * @var ?array<int, array{
+         *     number: int<1, 47>,
+         *     name: non-empty-string,
+         *     short_name: non-empty-string,
+         *     hiragana_name: non-empty-string,
+         *     katakana_name: non-empty-string,
+         *     english_name: non-empty-string,
+         *     region_number: int<1, 8>,
+         *     region_name: non-empty-string,
+         *     region_short_name: non-empty-string,
+         *     region_hiragana_name: non-empty-string,
+         *     region_katakana_name: non-empty-string,
+         *     region_english_name: non-empty-string,
+         * }> $rows
+         */
+        static $rows = null;
+
+        if ($rows === null) {
+            $prefectures = require __DIR__ . '/../Resources/prefectures.php';
+
+            $rows = array_column($prefectures, null, 'number');
+        }
+
+        return $rows;
+    }
+
+    /**
      * @return ?array{
      *   number: int<1, 47>,
      *   name: non-empty-string,
@@ -75,15 +120,7 @@ enum Prefecture: int
      */
     public function toArray(): ?array
     {
-        $prefectures = require __DIR__ . '/../Resources/prefectures.php';
-
-        foreach ($prefectures as $prefecture) {
-            if ($prefecture['number'] === $this->value) {
-                return $prefecture;
-            }
-        }
-
-        return null;
+        return self::rows()[$this->value] ?? null;
     }
 
     /**
@@ -146,20 +183,39 @@ enum Prefecture: int
      */
     public static function fromName(?string $name): ?self
     {
-        if ($name !== null) {
+        if ($name === null) {
+            return null;
+        }
+
+        return self::byName()[$name] ?? null;
+    }
+
+    /**
+     * @return array<string, self>
+     */
+    private static function byName(): array
+    {
+        /** @var ?array<string, self> $map */
+        static $map = null;
+
+        if ($map === null) {
+            $map = [];
+
             foreach (self::cases() as $case) {
-                if (
-                    $case->name() === $name ||
-                    $case->shortName() === $name ||
-                    $case->hiraganaName() === $name ||
-                    $case->katakanaName() === $name ||
-                    $case->englishName() === $name
-                ) {
-                    return $case;
+                foreach ([
+                    $case->name(),
+                    $case->shortName(),
+                    $case->hiraganaName(),
+                    $case->katakanaName(),
+                    $case->englishName(),
+                ] as $variant) {
+                    if ($variant !== null) {
+                        $map[$variant] ??= $case;
+                    }
                 }
             }
         }
 
-        return null;
+        return $map;
     }
 }
