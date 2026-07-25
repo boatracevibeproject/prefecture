@@ -7,7 +7,7 @@
     stopOnFailure="false"
 >
     <testsuites>
-        <testsuite name="BVP Prefecture">
+        <testsuite name="Boatrace Vibe Project">
             <directory suffix="Test.php">tests/</directory>
         </testsuite>
     </testsuites>
